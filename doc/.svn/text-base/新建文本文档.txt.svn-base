@@ -1,0 +1,76 @@
+<ul>
+			<li class="">
+				<a id="userMessage" onclick="userMessagefix(this)" href="javascript:;"> <img class="userPhoto pull-left" src="images/userObject.png" />
+					<p class="messages">
+						<span class="message-name">Cole Mohr</span><span class="message-grade">一级</span><span class="message-state">紧急呼叫</span>
+					</p>
+					<p class="message-date">
+						时间：<span>6.23 11：13：30</span>
+					</p>     <span class="caret"></span>
+					
+				</a>
+				
+				<div class="userMessages-more">
+					<p class="pMargin">再某某地址产生紧急呼救告警</p>
+					<p class="row"><span class="col-xs-6">经度：</span><span class="col-xs-6">纬度：</span></p>
+					<p class="pMargin">矫正类型</p>
+					<p class="pMargin">执行单位名称执行单位名称执行单位名称</p>
+					<p class="btnsGroup"> <a href="">解除</a><a href="">推送ECU911</a><a href="">电话</a><a href="">短信</a><a href="">告警轨迹</a></p>
+				</div>
+				<a href="javascript:void(0);" onclick="iconX(this)"><i class="wrong-icon"></i></a>
+			</li>
+			<li class="">
+				<a id="userMessage" onclick="userMessagefix(this)" href="javascript:;"> <img class="userPhoto pull-left" src="images/userObject.png" />
+					<p class="messages">
+						<span class="message-name">Cole Mohr</span><span class="message-grade">一级</span><span class="message-state">紧急呼叫</span>
+					</p>
+					<p class="message-date">
+						时间：<span>6.23 11：13：30</span>
+					</p>     <span class="caret"></span>
+					<i class="wrong-icon"></i>
+				</a>
+				<div class="userMessages-more">
+					<p class="pMargin">再某某地址产生紧急呼救告警</p>
+					<p class="row"><span class="col-xs-6">经度：</span><span class="col-xs-6">纬度：</span></p>
+					<p class="pMargin">矫正类型</p>
+					<p class="pMargin">执行单位名称执行单位名称执行单位名称</p>
+					<p class="btnsGroup"> <a href="">解除</a><a href="">推送ECU911</a><a href="">电话</a><a href="">短信</a><a href="">告警轨迹</a></p>
+				</div>
+			</li>
+		</ul>
+		
+		<script>
+	var insertValue = '<li class="">\
+				'+'<a id="userMessage" onclick="userMessagefix(this)" href="javascript:;">\
+				'+'<img class="userPhoto pull-left" src="images/userObject.png" />\
+				'+'<p class="messages">\
+				'+'<span class="message-name">Cole Mohr</span><span class="message-grade">一级</span><span class="message-state">紧急呼叫</span>\
+				'+'</p>\
+				'+'<p class="message-date">\
+				'+'时间：<span>6.23 11：13：30</span>\
+				'+'</p>     <span class="caret"></span>\
+				'+'<i class="wrong-icon"></i>\
+				'+'</a>\
+				'+'<div class="userMessages-more">\
+				'+'<p class="pMargin">再某某地址产生紧急呼救告警</p>\
+				'+'<p class="row"><span class="col-xs-6">经度：</span><span class="col-xs-6">纬度：</span></p>\
+				'+'<p class="pMargin">矫正类型</p>\
+				'+'<p class="pMargin">执行单位名称执行单位名称执行单位名称</p>\
+				'+'<p class="btnsGroup"> <a href="">解除</a><a href="">推送ECU911</a><a href="">电话</a><a href="">短信</a><a href="">告警轨迹</a></p>\
+				'+'</div>\
+				'+'</li>';
+		$('#moreMessages').click(function(){
+			console.log(insertValue);
+			$(".fix-messages ul").append($(".fix-messages ul li:nth-child(1)").clone());
+			//$('.fix-messages ul li:last-child').after(insertValue);	
+		});
+		function userMessagefix(a){
+			$(a).next().toggle();
+		}
+		//$('.wrong-icon').click(
+		function iconX(){
+			console.log($(this).parent().parent());
+			$(this).parent('li').remove();
+			return false;
+		}
+	</script>

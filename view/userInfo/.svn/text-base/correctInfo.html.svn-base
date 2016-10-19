@@ -1,0 +1,15 @@
+<div class="user-info-text">
+	<p class="user-info-text-tittle">矫正信息</p>
+	<p class="row"><span class="col-md-6"><span>类型：</span>矫正类型</span><span  class="col-md-6"><span>执行单位：</span>执行单位</span></p>
+	<p class="row"><span class="col-md-6"><span>状态：</span>状态</span><span class="col-md-6"><span>    所属组：</span>分组A</span></p>
+	<p class="row"><span class="col-md-6"><span>开始时间：</span>2016-02-13</span><span  class="col-md-6"><span>结束时间：</span>2016-12-29</span></p>
+	<p class="row"><span class="col-md-6"><span>负责警官：</span>Benjamin Eidem / Leo Mollet</span><span  class="col-md-6"><span>矫正原因：</span>矫正原因</span></p>
+</div>
+<div class="user-info-text">
+	<p class="user-info-text-tittle">法官信息</p>
+	<p class="row"><span class="col-md-3"><span>姓名：</span>Matt Hitt</span><span class="col-md-3 user-info-text-tel">15243007988</span><span class="col-md-6 user-info-text-mail">Matt Hitt@cssca.com</span></p>
+</div>
+<div class="user-info-text">
+	<p class="user-info-text-tittle">潜在受害人（0）</p>
+	<p class="row"><span class="col-md-3"><span>姓名：</span>Matt Hitt</span><span class="col-md-3 user-info-text-tel">15243007988</span><span class="col-md-6"><span>设备号:</span>15146145615615</span></p>
+</div>

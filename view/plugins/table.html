@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+<meta charset="UTF-8">
+<title>社区矫正系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" http-equiv="Content-Type">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" />
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="../../js/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<script src="../../angular/angular.js"></script>
+<script src="../../js/respond.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="../../css/bootstrap-table.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="../../js/bootstrap-table.js"></script>
+
+<!-- Latest compiled and minified Locales -->
+<script src="../../js/bootstrap-table-zh-CN.js"></script>
+</head>
+<body>
+<div class="mtb">
+	<table class="mytable table table-striped table-no-bordered table-condensed">
+		
+	</table>
+	<div class="mtb-btngroup">跳转到<input class="ye"><button class="que">确定</button></div>
+</div>
+</body>
+<style type="text/css">
+.mtb{
+	position: relative;
+}
+.mtb-btngroup{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.mytable thead tr{
+	background: #a0b3d4;
+	color: #fff;
+}
+.mytable thead tr th div.th-inner {
+	line-height: 21px;
+}
+.red{
+	color:red;
+}
+.pagination-detail{
+	display: none;
+}
+.pagination{
+	margin-right: 300px;
+}
+</style>
+<script type="text/javascript">
+$('.que').click(function(){
+	var parameter = $('.ye').val();
+	$('.mytable').bootstrapTable('selectPage', parameter);
+// 	$('.mytable').bootstrapTable('toggleView');
+})
+$('.mytable').bootstrapTable({
+	sortName: 'category',
+	sortOrder: 'desc',
+	pagination: 'true',
+	pageSize: 10,
+	paginationHAlign:'right',
+	paginationLoop:'false',
+    columns: [{
+    	checkbox: 'true',
+    },{
+    	width: '110',
+        field: 'level',
+        title: '告警级别'
+    }, {
+    	width: '120',
+        field: 'category',
+        title: '告警类别'
+    }, {
+    	width: '105',
+    	order:'desc',
+        field: 'time',
+        title: '时间'
+    }, {
+    	width: '85',
+        field: 'state1',
+        title: ' '
+    }, {
+    	width: '130',
+        field: 'state',
+        title: '状态'
+    }, {
+		field: 'address',
+        title: '地址'
+    }, {
+    	width: '170',
+        field: 'operation',
+        title: ' '
+    }],
+    data: [{
+        level: '1',
+        category: '紧急呼救1',
+        time: '6.23 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '2',
+        category: '紧急呼救2',
+        time: '6.26 11:33:20',
+        state1: '<span class="red">1</span>',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '1',
+        category: '紧急呼救1',
+        time: '6.27 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '4',
+        category: '紧急呼救4',
+        time: '6.25 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    },{
+        level: '3',
+        category: '紧急呼救3',
+        time: '6.24 11:33:20',
+        state: '未处理',
+        address: '中软大厦'
+    }]
+});
+</script>
+</html>

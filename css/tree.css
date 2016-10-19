@@ -1,0 +1,87 @@
+.treeBox{
+	width: 100%;
+	border:1px solid #eeeeee;
+}
+.treeCity{
+	/*background: url() no-repeat !important;*/
+    width: 16px !important;
+    height: 16px !important;
+    display: inline-block !important;
+    background: url(../images/menu.png) no-repeat 0 0px !important;
+    margin: 0px 9px -3px 12px !important;
+    margin-top: 10px !important;
+}
+.TreeImportant{
+	width: 16px !important;
+    height: 16px !important;
+    display: inline-block !important;
+    background: url(../images/menu.png) no-repeat -16px 0px !important;
+    margin: 0px 9px -3px 12px !important;
+    margin-top: 10px !important;
+}
+.TreeGroup{
+	width: 16px !important;
+    height: 16px !important;
+    display: inline-block !important;
+    background: url(../images/menu.png) no-repeat -32px 0px !important;
+    margin: 0px 9px -3px 12px !important;
+    margin-top: 10px !important;
+}
+.jstree-ocl{
+	background: url(../images/messageClose.png) no-repeat !important;
+	position: absolute !important;
+	right: 5px !important;
+	/*border: 1px solid red;*/
+	top: 8px;
+	transition: 0.2s;
+}
+.jstree-default .jstree-open > .jstree-ocl {
+  background-position: 7px 6px !important;
+  transform:rotate(90deg);
+  -ms-transform:rotate(90deg); 	/* IE 9 */
+  -moz-transform:rotate(90deg); 	/* Firefox */
+  -webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+  -o-transform:rotate(90deg); 	/* Opera */
+}
+.jstree-default .jstree-closed > .jstree-ocl {
+  background-position: 7px 6px !important;
+}
+.jstree-default .jstree-leaf > .jstree-ocl {
+  background: none !important;
+}
+.jstree-anchor{
+	height: 40px !important;
+	line-height: 40px !important;
+	border:none !important;
+	border-bottom: 1px solid #e5e5e5 !important;
+	width: 100%;
+	padding: 0px !important;
+}
+.jstree-clicked,.jstree-hovered{
+	background: none !important;
+	box-shadow:none !important;
+	border-bottom: 1px solid #e5e5e5 !important;
+	color: #058cf4 !important;
+	cursor:pointer !important;
+}
+.jstree-children ul li{
+	margin-left: 0 !important;
+	padding-left: 37px !important;
+	cursor:pointer !important;
+}
+.jstree-node {
+	position: relative !important;
+}
+.list-line-span{
+	display: inline-block;
+	width: 2000px;
+	margin-left: -2000px;
+	border-bottom: 1px solid #dcdcdc;
+	height: 40px;
+	text-align: right;
+	line-height: 40px;
+}
+.list-line-span:hover{
+	cursor:pointer !important;
+	color: #058cf4 !important;
+}

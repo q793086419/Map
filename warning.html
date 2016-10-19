@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+<meta charset="UTF-8">
+<title>社区矫正系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" http-equiv="Content-Type">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<!-- Bootstrap -->
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+<!-- <link rel="stylesheet" href="css/index.css" /> -->
+<link rel="stylesheet" type="text/css" href="css/common-head.css">
+<link rel="stylesheet" type="text/css" href="css/common-table.css">
+<link rel="stylesheet" type="text/css" href="css/warning.css">
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="js/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="angular/angular.js"></script>
+<script src="js/respond.min.js"></script>
+<script type="text/javascript" src="js/warning.js"></script>
+<!-- <script src="js/index.js"></script> -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap-table.css">
+<!-- Latest compiled and minified JavaScript -->
+<script type="text/javascript" src="js/bootstrap-table.js"></script>
+<!-- Latest compiled and minified Locales -->
+<script type="text/javascript" src="js/bootstrap-table-zh-CN.js"></script>
+<link rel="stylesheet" type="text/css" href="css/daterangepicker.css"><!-- 日期插件样式 -->
+<script type="text/javascript" src="js/moment.js"></script><!-- 日期插件 -->
+<script src="js/daterangepicker.js"></script><!-- 日期插件 -->
+
+<link rel="stylesheet" type="text/css" href="css/style.min.css">
+<link rel="stylesheet" type="text/css" href="css/tree.css">
+<script type="text/javascript" src="js/jstree.min.js"></script>
+
+</head>
+<body>
+	<i class="nav-icon nav-icon-f"></i>
+	<nav class="navbar navbar-min" role="navigation">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><img src="images/logo.png"></a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="index.html"><i class="nav-icon nav-icon-j"></i>监控</a></li>
+					<li class="active"><a href="#"><i class="nav-icon nav-icon-g"></i>告警</a></li>
+					<li><a href="statistics.html"><i class="nav-icon nav-icon-t"></i>统计</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#"><i class="nav-icon nav-icon-h"></i>   进入后台管理</a></li>
+					<!-- <li><a href="#"><img src="images/user.png">   wangbadan</a></li> -->
+					<li>
+						<div class="dropdown dropdown-box">
+						  <a class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+						    <img src="images/user.png">   wangbadan
+						  </a>
+						  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+						    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-toggle="modal" data-target="#myModal">消息<i class="red nav-red">5</i></a></li>
+						    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">设置</a></li>
+						    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">退出</a></li>
+						  </ul>
+						</div>
+					</li>
+					<li><a class="q-f"><i class="nav-icon nav-icon-q"></i></a></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+
+	<div id="left-panel-alarm" class="left-panel1 preson-nav-down pull-left">
+		<div class="preson-item">
+			<div class="preson-nav">
+				<div class="treeBox">
+					<div id="container"></div>
+				</div>
+				<script>
+				$(function() {
+				  $('#container').jstree({
+				    'core' : {
+				    	"multiple" : false,//不可多选
+				    	'dblclick_toggle': false,//禁用双击打开
+				      	'data' : [
+				        { 
+				        	"id" : "parent1",
+				        	"text" : "北京市",
+				        	"icon" : "treeCity",//父级图标
+				        	"children" : [
+				            { 
+				            	"id" : "2",
+				            	"text" : "<span class='list-line-span'>&nbsp;</span>朝阳区",
+				            	"icon" : false,
+				            	"children" : [
+					            { 
+					            	"id" : "3",
+					            	"text" : "<span class='list-line-span'>&nbsp;</span>皂君庙",
+					            	"icon" : false,
+					            	"children" : [
+					            	{ 
+					            		"id" : "10",
+					            		"text" : "<span class='list-line-span'>&nbsp;</span>皂君庙",
+					            		"icon" : false
+					            	},
+					            	{ 
+					            		"id" : "11",
+					            		"text" : "<span class='list-line-span'>&nbsp;</span>西二旗",
+					            		"icon" : false
+					            	}
+					            	]
+					            },
+					            { 
+					            	"id" : "4",
+					            	"text" : "<span class='list-line-span'>&nbsp;</span>西二旗",
+					            	"icon" : false
+					            }
+					          ]
+				            },
+				            { 
+				            	"id" : "5",
+				            	"text" : "<span class='list-line-span'>&nbsp;</span>海淀区",
+				            	"icon" : false
+				            }
+				          ],
+				        },{
+				        	"id" : "parent2",
+				        	"text" : "重点关注",
+				        	"icon" : "TreeImportant"
+				        },{
+				        	"id" : "parent3",
+				        	"text" : "我的分组",
+				        	"icon" : "TreeGroup",
+				        	"children" : [{
+				        		"id" : "3333",
+				            	"text" : "<span class='list-line-span'>&nbsp;</span>分组一",
+				            	"icon" : false
+				        	}]
+				        }
+				        ]
+				    }
+				  });
+				});
+				//jstree单击事件  
+				$("#container").bind("select_node.jstree", function (e, data) {  
+				  
+				    if(data.node.id !=0 ){                           //排除第一个节点  
+				        data.instance.toggle_node(data.node);        //单击展开下面的节点  
+				    }  
+				      
+				});  
+				</script>
+				
+			</div>			
+		</div>
+	</div>
+	<div class="warning-content pull-right">
+		<table class="alermSearch-table">
+			<tbody>
+				<tr>
+					<td class="td-name">监控对象</td>
+					<td>
+						<input type="text" class="inputName">
+						<button class="inputName-btn">确定</button>
+					</td>
+					<td class="td-name">级别</td>
+					<td>
+						<a class="active">全部</a>
+						<a>一级</a>
+						<a>二级</a>
+						<a>三级</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="td-name">时间</td>
+					<td class="uncustom-time">
+						<a class="active">24小时</a>
+						<a>72小时</a>
+						<a>一周</a>
+						<a>一月</a>
+						<a class="custom-time-btn">自定义</a>
+					</td>
+					<td class="custom-time">从
+						<input size="16" type="text" class="custom-time-input-star" value="" id="custom-time-input-star" readonly>-
+						<input size="16" type="text" class="custom-time-input-end" value="" id="custom-time-input-end" readonly>
+						<a class="custom-time-btn-Y">确定</a>
+						<a class="custom-time-btn-N">取消</a>
+					</td>
+					
+					</th>
+					<td class="td-name">状态</td>
+					<td>
+						<a class="active">全部</a>
+						<a>未处理</a>
+						<a>已解除</a>
+						<a>自动处理</a>
+						<a>处理中</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="td-name">类型</td>
+					<td colspan="3">
+						<a class="active">全部</a>
+						<a>强拆</a>
+						<a>低电</a>
+						<a>紧急呼救</a>
+						<a>强拆</a>
+						<a>低电</a>
+						<a>紧急呼救</a>
+						<a>强拆</a>
+						<a>低电</a>
+						<a>紧急呼救</a>
+						<a>强拆</a>
+						<a>低电</a>
+						<a>紧急呼救</a>
+						<button class="tableMoreBtn">更多筛选<i class="tableMoreBtnI"></i></button>
+					</td>
+				</tr>
+				<tr id="disTr" class="pagination-detail">
+					<td class="td-name">监视对象类型</td>
+					<td>
+						<a class="active">全部</a>
+						<a>罪犯</a>
+						<a>潜在受害人</a>
+					</th>
+					<td class="td-name">处理人</td>
+					<td style="position:relative">
+						<input type="text" class="dealing-name">
+						<button class="tableCloseBtn">常用筛选<i class="tableMoreBtnI"></i></button>
+						<div class="dealing-name-show">
+							<a href="" class="list-group">分组A</a>
+							<ul>
+								<li><a onclick='police(this)'>处理人1</a></li>
+								<li><a onclick='police(this)'>处理人2</a></li>
+							</ul>
+							<a href="" class="list-group">分组B</a>
+							<ul>
+								<li><a onclick='police(this)'>处理人3</a></li>
+								<li><a onclick='police(this)'>处理人4</a></li>
+							</ul>
+							<a href="" class="list-group">分组C</a>
+							<ul>									
+								<li><a onclick='police(this)'>处理人5</a></li>
+								<li><a onclick='police(this)'>处理人6</a></li>
+							</ul>
+							<a href="" class="list-group">分组D</a>
+							<ul>
+								<li><a onclick='police(this)'>处理人7</a></li>
+								<li><a onclick='police(this)'>处理人8</a></li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="searchValue">
+			<div class="searchValue-messages pull-left">
+				<span>24小时内警告共：<span>30</span></span>
+				<span>待处理警告：<span class="font-red">6</span></span>
+				<span>已处理：<span class="font-blue">24</span></span>
+				<span>自动处理：<span class="font-blue">16</span></span>
+			</div>
+			<div class="searchValue-btns pull-right">
+				<a>解除</a>
+				<a>推送ECU911</a>
+				<a>电话</a>
+				<a>短信</a>
+			</div>
+		</div>
+		<div class="mtb">
+			<table class="mytable table table-striped table-no-bordered table-condensed">
+				
+			</table>
+			<div class="mtb-btngroup">跳转到<input class="ye"><button class="que">确定</button></div>
+		</div>
+
+	</div>
+	<script type="text/javascript">
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+/*  
+	电量html结构为：<i class="power power-5">
+	GPS信号html结构为：<i class="GPS-icon GPS-icon-0">
+*/
+/*
+	以下为样式style 
+*/
+/* index */
+.GPS-icon{
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin-right: 10px;
+}
+/* 个人信息 GPS style */
+.user-info-text .GPS-icon{
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin-left: 10px;
+	margin-bottom: -2px;
+}
+/* commmon 数字分别代表百分比 */
+.GPS-icon-0{
+	background: url(../images/signal.png) no-repeat 0 -56px;
+}
+.GPS-icon-25{
+	background: url(../images/signal.png) no-repeat 0 0px;
+}
+.GPS-icon-50{
+	background: url(../images/signal.png) no-repeat 0 -14px;
+}
+.GPS-icon-75{
+	background: url(../images/signal.png) no-repeat 0 -28px;
+}
+.GPS-icon-100{
+	background: url(../images/signal.png) no-repeat 0 -42px;
+}
+/* 以下为power */
+/* commmon 数字分别代表百分比 */
+.power{
+	display: inline-block;
+	width: 18px !important;
+	height: 9px !important;
+	margin-right: 7px !important;
+}
+.power-5{
+	background: url(../images/power.png) no-repeat 0px -54px !important;
+}
+.power-10{
+	background: url(../images/power.png) no-repeat 0px -45px !important;
+}
+.power-20{
+    background: url(../images/power.png) no-repeat 0px -36px !important;
+}
+.power-40{
+	background: url(../images/power.png) no-repeat 0px -27px !important;
+}
+.power-60{
+    background: url(../images/power.png) no-repeat 0px -18px !important;
+}
+.power-80{
+    background: url(../images/power.png) no-repeat 0px -9px !important;
+}
+.power-100{
+	background: url(../images/power.png) no-repeat 0px 0px !important;
+}

@@ -1,0 +1,10 @@
+<div class="user-info-enclosure">	
+	<div class="user-info-text">
+		<p class="user-info-text-tittle">名称</p>
+		<p class="row"><span class="col-md-6"><i class="file file-files"></i>文件/文件夹名称</span><span  class="col-md-6">2016-08-16 11：20</span></p>
+		<p class="row"><span class="col-md-6"><i class="file file-xls"></i>文件/文件夹名称</span><span  class="col-md-6">2016-08-16 11：20</span></p>
+		<p class="row"><span class="col-md-6"><i class="file file-ppt"></i>文件/文件夹名称</span><span  class="col-md-6">2016-08-16 11：20</span></p>
+		<p class="row"><span class="col-md-6"><i class="file file-doc"></i>文件/文件夹名称</span><span  class="col-md-6">2016-08-16 11：20</span></p>
+		<p class="row"><span class="col-md-6"><i class="file file-pdf"></i>文件/文件夹名称</span><span  class="col-md-6">2016-08-16 11：20</span></p>
+	</div>
+</div>

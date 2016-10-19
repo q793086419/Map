@@ -1,0 +1,263 @@
+$(function(){
+	$('.q-f').click(function(){
+		$('body').toggleClass("main")
+	})
+	$('.nav-icon-f').click(function(){
+		$('body').toggleClass("main")
+	})
+	$('.item-list-icon-left').click(function(){
+		$('#left-panel1').toggleClass("left-panel1")
+	})
+	$('.preson-item-header .menu-list-icon').click(function(){
+		$('#left-panel1').toggleClass("left-panel1")
+	})
+	$('.item-list-icon-right').click(function(){
+		$('#left-panel2').toggleClass("left-panel2");
+	})
+	$('.item-list-icon-right2').click(function(){
+		$('#left-panel2').addClass("left-panel2")
+		$('#rightCloseBtn').show();
+	})
+	$('.warning-header .menu-list-icon').click(function(){
+		$('#left-panel2').toggleClass("left-panel2")
+	})
+	$('.preson-item-header').click(function(){
+		$('#left-panel1').toggleClass("preson-nav-down");
+		$('.header-open').toggleClass('header-close');
+	})
+	$('.accordion-toggle').click(function(){
+		$(this).children('.close').toggleClass('open');
+	});
+	//关注
+	var alertDiv = $('<div class="alert-div">关注成功</div>')
+	var alertDivfalse = $('<div class="alert-div-false">取消关注成功</div>')
+	$('.star').click(function(){
+		if($(this).hasClass('star-click')){
+			$('.alert-div-false').addClass("alert-div-alert")
+			setTimeout( function(){
+				$('.alert-div-false').removeClass("alert-div-alert")
+			}, 1000 );
+			$(this).toggleClass("star-click");
+		}else{
+			$('.alert-div').addClass("alert-div-alert")
+			setTimeout( function(){
+				$('.alert-div').removeClass("alert-div-alert")
+			}, 1000 );
+			$(this).toggleClass("star-click")
+			//$('.alert-div').removeClass("alert-div-alert");	
+		}
+		event.stopPropagation();
+	})
+	//左侧树关闭按钮
+	//panel1
+	$('.item-list-icon-left').click(function(){
+		$(this).hide();
+	})
+	$('.item-list>.item-list-icon-left').click(function(){
+		$('.item-list-icon-left').show();
+	})
+	//panel2
+	$('.item-list-icon-right').click(function(){
+		$(this).hide();
+	})
+	$('.item-list>.item-list-icon-right').click(function(){
+		$('.item-list-icon-right').show();
+	})
+	//电池电量
+	function power(x){
+		if (x<=20){
+			$('.power-pro').addClass('power-pro-min');
+			$('.power-pro .progress .progress-bar').css('width',x+'%');
+		}else{
+			$('.power-pro').removeClass('power-pro-min');
+			$('.power-pro .progress .progress-bar').css('width',x+'%');
+		}
+	}
+			
+	//点击关闭panel1 树
+	$('.listLink').click(function(e){
+		if($(e.target).is(".close")){
+			return;
+		}
+		if($(this).children('i').hasClass('close')){
+			$(this).next('div').toggleClass('in');
+			$('.left-panel1').toggleClass('preson-nav-down');
+			$('.header-open').removeClass('header-close');
+		}
+		return false;
+	});
+
+	//告警高级搜索   唯一id打开指定的告警搜索框
+	$('#alarmSearchBtn').click(function(){
+		$('.alert-box').hide();
+		$('#alarmSearch').toggle();
+	});
+	//发送短信弹窗
+	$('.SMSBtn').click(function(){
+		$('.alert-box').hide();
+		$('#alertSMS').toggle();
+	});
+	//解除告警弹窗
+	$('.alertAlarmBtn').click(function(){
+		$('.alert-box').hide();
+		$('#alertAlarm').toggle();
+	});
+	//监控高级搜索 唯一id打开指定的监控搜索框
+	$('#alarmSearchBtn2').click(function(){
+		$('.alert-box').hide();
+		$('#alarmSearch2').toggle();
+	});
+	//个人详细信息弹窗
+	$('.preson-list>ul>li>a').click(function(){
+		$('.alert-box').hide();
+		$('#modal-preson').toggle();
+	});
+	$('.alertClosebtn').click(function(){
+		$('.alert-box').hide();
+	});
+	//发送短信alert
+	$('.btns-value').click(function(){
+		var temp = $('.textarea-window').val();
+		if (temp=='') {
+			temp += $(this).text();
+		}else{
+			temp += '\n'+$(this).text();
+		}
+		$('.textarea-window').val(temp);
+	});
+	//时间日期插件属性
+	 $('#alert-time1-start').daterangepicker({
+	     "singleDatePicker": true,
+	     "showDropdowns": true,
+	     "showWeekNumbers": true,
+	     "showISOWeekNumbers": true,
+	     "locale": {
+	         "direction": "ltr",
+	         "format": "YYYY/MM/DD HH:mm",
+	         "separator": " - ",
+	         "applyLabel": "Apply",
+	         "cancelLabel": "Cancel",
+	         "fromLabel": "From",
+	         "toLabel": "To",
+	         "customRangeLabel": "Custom",
+	         "daysOfWeek": [
+	             "Su",
+	             "Mo",
+	             "Tu",
+	             "We",
+	             "Th",
+	             "Fr",
+	             "Sa"
+	         ],
+	         "monthNames": [
+	             "January",
+	             "February",
+	             "March",
+	             "April",
+	             "May",
+	             "June",
+	             "July",
+	             "August",
+	             "September",
+	             "October",
+	             "November",
+	             "December"
+	         ],
+	         "firstDay": 1
+	     },
+	     "showCustomRangeLabel": false,
+	     "startDate": "2016/06/01",
+	     "endDate": "2016/06/02",
+	     "opens": "center"
+	 }, function(start, end, label) {
+	   console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+	 });
+	$('#alert-time1-end').daterangepicker({
+	     "singleDatePicker": true,
+	     "showDropdowns": true,
+	     "showWeekNumbers": true,
+	     "showISOWeekNumbers": true,
+	     "locale": {
+	         "direction": "ltr",
+	         "format": "YYYY/MM/DD HH:mm",
+	         "separator": " - ",
+	         "applyLabel": "Apply",
+	         "cancelLabel": "Cancel",
+	         "fromLabel": "From",
+	         "toLabel": "To",
+	         "customRangeLabel": "Custom",
+	         "daysOfWeek": [
+	             "Su",
+	             "Mo",
+	             "Tu",
+	             "We",
+	             "Th",
+	             "Fr",
+	             "Sa"
+	         ],
+	         "monthNames": [
+	             "January",
+	             "February",
+	             "March",
+	             "April",
+	             "May",
+	             "June",
+	             "July",
+	             "August",
+	             "September",
+	             "October",
+	             "November",
+	             "December"
+	         ],
+	         "firstDay": 1
+	     },
+	     "showCustomRangeLabel": false,
+	     "startDate": "2016/06/01",
+	     "endDate": "2016/06/01",
+	     "opens": "center"
+	 }, function(start, end, label) {
+	   console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+	 });
+})
+
+
+//告警 展开
+function messageDetails(Obj){
+	if($(Obj).next().is(":hidden")){
+		$('.message-details').hide();
+		$(Obj).children('.messageClose').toggleClass('messageOpen');
+		$(Obj).next().toggle();
+		$(Obj).parent('li').addClass('active');
+	}
+	else{
+		$(Obj).next().toggle();
+		$(Obj).children('.messageClose').toggleClass('messageOpen');
+		$(Obj).parent('li').removeClass('active');
+	}
+}
+
+//右下角 浮动弹出层
+function iconX(data){
+	$(data).parent('a').parent('li').remove();
+ 	event.stopPropagation();
+	return false;
+}
+function userMessagefix(data){
+	$(data).parent('li').toggleClass("user-message-hide");
+	$(data).children('.caret').toggleClass('caretTOP');
+ 	event.stopPropagation();
+}
+
+var messagerTimeout = setTimeout(function(){$('.fix-messages>ul>li').hide()},5000);
+function timer(){
+	clearTimeout(messagerTimeout);
+}
+function timerout(){
+	messagerTimeout = setTimeout(function(){$('.fix-messages>ul>li').hide()},5000);
+}
+//点击警官名自动输入到input输入框中
+	function police(obj){
+		$('#policeInput').val('');
+		$('#policeInput').val($(obj).text());
+		$('#dropdown-police').toggleClass('in');
+	}	

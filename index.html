@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+<meta charset="UTF-8">
+<title>社区矫正系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" http-equiv="Content-Type">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/daterangepicker.css"><!-- 日期插件样式 -->
+<link rel="stylesheet" type="text/css" href="css/power&GPS.css">
+<link rel="stylesheet" href="css/index.css" />
+<link rel="stylesheet" href="css/modal.css" />
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="js/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="angular/angular.js"></script>
+<script type="text/javascript" src="js/moment.js"></script><!-- 日期插件 -->
+<script src="js/daterangepicker.js"></script><!-- 日期插件 -->
+
+<script src="js/index.js"></script>
+
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<!-- jstree -->
+<link rel="stylesheet" type="text/css" href="css/style.min.css">
+<link rel="stylesheet" type="text/css" href="css/tree.css">
+<script type="text/javascript" src="js/jstree.min.js"></script>
+<!-- 分页 -->
+<script type="text/javascript" src="js/bootstrap-paginator.js"></script>
+</head>
+<body>
+	<i class="nav-icon nav-icon-f"></i>
+	<nav class="navbar navbar-min" role="navigation">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><img src="images/logo.png"></a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#"><i class="nav-icon nav-icon-j"></i>监控</a></li>
+					<li><a href="warning.html"><i class="nav-icon nav-icon-g"></i>告警</a></li>
+					<li><a href="statistics.html"><i class="nav-icon nav-icon-t"></i>统计</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#"><i class="nav-icon nav-icon-h"></i>   进入后台管理</a></li>
+					<!-- <li><a href="#"><img src="images/user.png">   wangbadan</a></li> -->
+					<li>
+						<div class="dropdown dropdown-box">
+						  <a class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+						    <img src="images/user.png">   wangbadan
+						  </a>
+						  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+						    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-toggle="modal" data-target="#myModal">消息<i class="red nav-red">5</i></a></li>
+						    
+						    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">设置</a></li>
+						    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">退出</a></li>
+						  </ul>
+						</div>
+					</li>
+					<li><a class="q-f"><i class="nav-icon nav-icon-q"></i></a></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+	<div id="item-left">
+		<div class="item-list">
+			<i class="item-list-icon item-list-icon-left pull-left"></i>
+			<span>全部监控对象(<span>100</span>)</span>
+			<i class="item-list-icon item-list-icon-right pull-right"><em class="red" >1</em></i>
+		</div>
+		<div id="left-panel1">
+			<div class="preson-item">
+				<div class="preson-item-header">
+					<!-- <i class="menu-list-icon menu-list-icon-left pull-left"></i> -->
+					<span id="outAddress">北京市</span><i class="prompt-num">100</i><i class="header-open pull-right header-close"></i>
+				</div>
+				<div class="preson-nav">
+					<div class="accordion-group border-list">	
+						<!-- tree -->
+						<div class="preson-nav">
+							<div class="treeBox">
+								<div id="container"></div>
+							</div>
+						</div>
+		  			</div>	
+				</div>
+				<div class="preson-item-serach">
+					<div class="input-group">
+						<input type="text" id="item-search1" class="form-control item-search" placeholder="搜索"/>
+						 <!-- <span class="input-group-btn">
+					        <button class="btn btn-default item-searchBtn" type="button">高级搜索</button>
+					    </span> -->
+					    <div class="input-group-btn">
+					        <button type="button" class="btn btn-default searchBtn"><i class="searchBtn-icon"></i></button>
+					        <button type="button" class="btn btn-default item-searchBtn" id="alarmSearchBtn2">高级搜索</button>
+					   	</div>
+					</div>
+				</div>
+				<div class="preson-list">
+					<ul>
+		        		<li>
+		        			<a href="javascript:;">
+			        			<img class="pull-left object-img" src="images/Object.png"/>
+			        			<div class="pull-right objectView">
+				        			<p class="userlist1"><span class="object-name">Cole Mphr</span><i class="red">3</i><span class="pull-right"><i class="GPS-icon GPS-icon-0"></i></i><span class="battery">5%</span><i class="power power-5"></i><i class="star"></i></span></p>
+				        			<p class="userlist2"><span class="object-state green">矫正中</span><span class="outdate">剩余30天</span><span class="pull-right address">皂君庙</span></p>
+			        			</div>
+		        			</a>
+		        		<li>
+		        			<a href="javascript:;">
+			        			<img class="pull-left object-img" src="images/Object.png"/>
+			        			<div class="pull-right objectView">
+				        			<p class="userlist1"><span class="object-name">Cole Mphr</span><i class="red">3</i><span class="pull-right"><i class="GPS-icon GPS-icon-0"></i><span class="battery">5%</span><i class="power power-5"></i><i class="star"></i></span></p>
+				        			<p class="userlist2"><span class="object-state green">矫正中</span><span class="outdate">剩余30天</span><span class="pull-right address">皂君庙</span></p>
+			        			</div>
+		        			</a>
+						</li>
+		        	</ul>
+				</div>
+	        	<!-- <nav class="row pages">
+					<ul class="pagination col-xs-6">
+						<li class="disabled"><a href="#">&laquo;</a></li>
+						<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+						<li class=""><a href="#">2 <span class="sr-only">(current)</span></a></li>
+						<li class=""><a href="#">3 <span class="sr-only">(current)</span></a></li>
+						<li class=""><a href="#">... <span class="sr-only">(current)</span></a></li>
+						<li class=""><a href="#">13 <span class="sr-only">(current)</span></a></li>
+					</ul>
+					<div class="col-xs-6 jump"><span class="jump-text">跳转到</span><input class="jump-input" type="text"/><a class="jump-btn">确定</a></div>
+				</nav> -->
+				<div class="pages clearfix">
+					
+					<div class="pull-left page" id="pages2"></div>
+					<div class="pull-right mp0"><span class="maxpage"></span><span class="jump-text">跳转到</span><input class="jump-input" id="jump-input2"  type="text"/><a class="jump-btn jump-btn2">确定</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="preson-item-x item-list-icon-right" id="rightCloseBtn" style="display:none"><a href=""><img src="images/panelCloseBtn.png"></a></div>
+		<div id="left-panel2">
+			<!-- <div class="preson-item-x item-list-icon-right"><a href=""><img src="images/panelCloseBtn.png"></a></div> -->
+			<div class="warning">
+				<div class="panel2-header">
+					<ul id="myTab" class="nav nav-tabs row" role="tablist">
+						<!-- <i class="menu-list-icon item-list-icon-right item-list-icon-right-return pull-left"></i> -->
+					  	<li role="presentation" class="active  col-md-6"><a class="panel2-tittle" href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="false">海淀区告警</a></li>
+					  	<li role="presentation" class=" col-md-6"><a class="panel2-tittle" href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile" aria-expanded="true">全部告警</a></li>
+					</ul>
+				</div>
+				<div class="preson-item-serach">
+					<div class="input-group">
+						<input type="text" id="item-search1" class="form-control item-search" placeholder="搜索"/>
+					    <div class="input-group-btn">
+					        <button type="button" class="btn btn-default searchBtn"><i class="searchBtn-icon"></i></button>
+					        <button type="button" class="btn btn-default item-searchBtn" id="alarmSearchBtn">高级搜索</button>
+					   	</div>
+					</div>
+
+				</div>
+				<div class="monitor-messages">
+					<div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
+			        	 <ul>
+							<li class="">
+								<a onclick="messageDetails(this);" >
+									<img class="userPhoto pull-left active in " src="images/userObject.png"/>
+									<p class="messages"><span class="message-name ">tabs1</span><span class="message-grade">一级</span><span class="message-state">紧急呼叫</span></p>
+									<p class="message-date">时间：<span>6.23 11：13：30</span></p>
+									<i class="messageClose pull-right"></i>
+								</a>
+								<div class="message-details">
+									<p class="pMargin">再某某地址产生紧急呼救告警</p>
+									<p class="row"><span class="col-xs-6">经度：</span><span class="col-xs-6">纬度：</span></p>
+									<p class="pMargin">矫正类型</p>
+									<p class="pMargin">执行单位名称执行单位名称执行单位名称</p>
+									<p class="btnsGroup"><a class="alertAlarmBtn">解除</a><a class="ECU911">推送ECU911</a><a>电话</a><a class="SMSBtn">短信</a><a>告警轨迹</a></p>
+								</div>
+							</li>
+							<li class="">
+								<a onclick="messageDetails(this);">
+									<img class="userPhoto pull-left active in " src="images/userObject.png"/>
+									<p class="messages"><span class="message-name ">tabs1</span><span class="message-grade">一级</span><span class="message-state">紧急呼叫</span></p>
+									<p class="message-date">时间：<span>6.23 11：13：30</span></p>
+									<i class="messageClose pull-right"></i>
+								</a>
+								<div class="message-details">
+									<p class="pMargin">再某某地址产生紧急呼救告警</p>
+									<p class="row"><span class="col-xs-6">经度：</span><span class="col-xs-6">纬度：</span></p>
+									<p class="pMargin">矫正类型</p>
+									<p class="pMargin">执行单位名称执行单位名称执行单位名称</p>
+									<p class="btnsGroup"><a class="alertAlarmBtn">解除</a><a>推送ECU911</a><a>电话</a><a class="SMSBtn">短信</a><a>告警轨迹</a></p>
+								</div>
+							</li>
+						</ul>
+				    </div>
+				    <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
+				        <ul>
+							<li class="">
+								<a onclick="messageDetails(this)">
+									<img class="userPhoto pull-left " src="images/userObject.png"/>
+									<p class="messages"><span class="message-name ">Cole Mohr</span><span class="message-grade">一2级</span><span class="message-state">紧急呼叫</span></p>
+									<p class="message-date">时间：<span>6.23 11：13：30</span></p>
+									<i class="messageClose pull-right"></i>
+								</a>
+								<div class="message-details">
+									<p class="pMargin">再某某地址产生紧急呼救告警</p>
+									<p class="row"><span class="col-xs-6">经度：</span><span class="col-xs-6">纬度：</span></p>
+									<p class="pMargin">矫正类型</p>
+									<p class="pMargin">执行单位名称执行单位名称执行单位名称</p>
+									<p class="btnsGroup"><a class="alertAlarmBtn">解除</a><a>推送ECU911</a><a>电话</a><a class="SMSBtn">短信</a><a>告警轨迹</a></p>
+								</div>
+
+							</li>
+							<li>
+								<a onclick="messageDetails(this)">
+									<img class="userPhoto pull-left " src="images/userObject.png"/>
+									<p class="messages"><span class="message-name ">Cole Mohr</span><span class="message-grade">一2级</span><span class="message-state">紧急呼叫</span></p>
+									<p class="message-date">时间：<span>6.23 11：13：30</span></p>
+									<i class="messageClose pull-right"></i>
+								</a>
+								<div class="message-details">
+									<p class="pMargin">再某某地址产生紧急呼救告警</p>
+									<p class="row"><span class="col-xs-6">经度：</span><span class="col-xs-6">纬度：</span></p>
+									<p class="pMargin">矫正类型</p>
+									<p class="pMargin">执行单位名称执行单位名称执行单位名称</p>
+									<p class="btnsGroup"><a class="alertAlarmBtn">解除</a><a>推送ECU911</a><a>电话</a><a class="SMSBtn">短信</a><a>告警轨迹</a></p>
+								</div>
+							</li>
+							<li>
+								<a onclick="messageDetails(this)">
+									<img class="userPhoto pull-left " src="images/userObject.png"/>
+									<p class="messages"><span class="message-name ">Cole Mohr</span><span class="message-grade">一2级</span><span class="message-state">紧急呼叫</span></p>
+									<p class="message-date">时间：<span>6.23 11：13：30</span></p>
+									<i class="messageClose pull-right"></i>
+								</a>
+								<div class="message-details">
+									<p class="pMargin">再某某地址产生紧急呼救告警</p>
+									<p class="row"><span class="col-xs-6">经度：</span><span class="col-xs-6">纬度：</span></p>
+									<p class="pMargin">矫正类型</p>
+									<p class="pMargin">执行单位名称执行单位名称执行单位名称</p>
+									<p class="btnsGroup"><a class="alertAlarmBtn">解除</a><a>推送ECU911</a><a>电话</a><a class="SMSBtn">短信</a><a>告警轨迹</a></p>
+								</div>
+							</li>
+						</ul>
+				    </div>
+					<div class="pages clearfix">						
+						<div class="pull-left page" id="pages1"></div>
+						<div class="pull-right mp0"><span class="maxpage"></span><span class="jump-text">跳转到</span><input class="jump-input" id="jump-input1"  type="text"/><a class="jump-btn jump-btn1">确定</a></div>
+					</div>				    
+				</div>
+			</div>
+		</div>
+		<div class="preson-item-x item-list-icon-left"><a><img src="images/panelCloseBtn.png"></a></div>
+	</div>
+	<!-- 右下角 -->
+	<div class="fix-messages">
+		<div class="fix-messages-more pull-right item-list-icon-right2" style="display:none">更多</div><!-- 当消息超过3条时显示 更多 -->
+		<ul id="">
+			<li id="" class="" onmousemove="timer()" onmouseout="timerout()">
+				<a id="userMessage" href="javascript:;" onclick="userMessagefix(this)"> <img class="userPhoto pull-left" src="images/userObject.png" />
+					<p class="messages">
+						<span class="message-name">Cole Mohr1</span><span class="message-grade">一级</span><span class="message-state">紧急呼叫</span>
+					</p>
+					<p class="message-date">
+						<span>6.23 11：13：30</span>
+					</p>     <span class="caret"></span>
+					<i class="wrong-icon" onclick="iconX(this)"></i>
+				</a>
+				<div class="userMessages-more" >
+					<p class="pMargin">再某某地址产生紧急呼救告警</p>
+					<p class="row"><span class="col-xs-6">经度：</span><span class="col-xs-6">纬度：</span></p>
+					<p class="pMargin">矫正类型</p>
+					<p class="pMargin">执行单位名称执行单位名称执行单位名称</p>
+					<p class="btnsGroup"> <a href="" class="alertAlarmBtn">解除</a><a href="">推送ECU911</a><a href="">电话</a><a href="" class="SMSBtn">短信</a><a href="">告警轨迹</a></p>
+				</div>
+			</li>
+			<li id="" class="" onmousemove="timer()" onmouseout="timerout()">
+				<a id="userMessage" href="javascript:;" onclick="userMessagefix(this)"> <img class="userPhoto pull-left" src="images/userObject.png" />
+					<p class="messages">
+						<span class="message-name">Cole Mohr2</span><span class="message-grade">一级</span><span class="message-state">紧急呼叫</span>
+					</p>
+					<p class="message-date">
+						<span>6.23 11：13：30</span>
+					</p>     <span class="caret"></span>
+					<i class="wrong-icon" onclick="iconX(this)"></i>
+				</a>
+				<div class="userMessages-more">
+					<p class="pMargin">再某某地址产生紧急呼救告警</p>
+					<p class="row"><span class="col-xs-6">经度：</span><span class="col-xs-6">纬度：</span></p>
+					<p class="pMargin">矫正类型</p>
+					<p class="pMargin">执行单位名称执行单位名称执行单位名称</p>
+					<p class="btnsGroup"> <a href="" class="alertAlarmBtn">解除</a><a href="">推送ECU911</a><a href="">电话</a><a href="" class="SMSBtn">短信</a><a href="">告警轨迹</a></p>
+				</div>
+			</li>
+		</ul>
+		
+	</div>
+	<!-- 关注 -->
+	<div class="alert-div">关注成功</div>
+	<div class="alert-div-false">取消关注成功</div>
+	<!-- 消息 -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+	  	<div class="modal-dialog" style="    position: absolute; top: 150px; left: 50%; margin-left: -300px;">
+	    	<div class="modal-content">
+	      		<div class="modal-header">
+	      			消息
+	       			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		      	</div>
+		      	<div class="message-modal-body">
+		        	<ul>
+		        		<li class="clearfix">
+		        			<img class="userPhoto pull-left" src="images/userObject.png"/>
+							<div class="pull-left pull-box">
+								<span class="message-name pull-left">Cole Mohr</span>
+								<span class="object-state green pull-left clearBoth">矫正中</span>
+							</div>
+							<div class="pull-left pull-box">
+								<span class=" pull-left">离线</span>
+								<span class="pull-left clearBoth">到期时间 6-23 11：13：30</span>
+							</div>
+							<p class="pull-date pull-left">6-23 11：13：30</span></p>
+		        		</li>
+		        		<li class="clearfix">
+		        			<img class="userPhoto pull-left" src="images/userObject.png"/>
+							<div class="pull-left pull-box">
+								<span class="message-name pull-left">Cole Mohr</span>
+								<span class="object-state green pull-left clearBoth">矫正中</span>
+							</div>
+							<div class="pull-left pull-box">
+								<span class=" pull-left">离线</span>
+								<span class="pull-left clearBoth">到期时间 6-23 11：13：30</span>
+							</div>
+							<p class="pull-date pull-left">6-23 11：13：30</span></p>
+		        		</li>
+		        		<li class="clearfix">
+		        			<img class="userPhoto pull-left" src="images/userObject.png"/>
+							<div class="pull-left pull-box">
+								<span class="message-name pull-left">Cole Mohr</span>
+								<span class="object-state green pull-left clearBoth">矫正中</span>
+							</div>
+							<div class="pull-left pull-box">
+								<span class=" pull-left">离线</span>
+								<span class="pull-left clearBoth">到期时间 6-23 11：13：30</span>
+							</div>
+							<p class="pull-date pull-left">6-23 11：13：30</span></p>
+		        		</li>
+		        		<li class="clearfix">
+		        			<img class="userPhoto pull-left" src="images/userObject.png"/>
+							<div class="pull-left pull-box">
+								<span class="message-name pull-left">Cole Mohr</span>
+								<span class="object-state orange pull-left clearBoth">即将到期</span>
+							</div>
+							<div class="pull-left pull-box">
+								<span class=" pull-left">离线</span>
+								<span class="pull-left clearBoth">到期时间 6-23 11：13：30</span>
+							</div>
+							<p class="pull-date pull-left">6-23 11：13：30</span></p>
+		        		</li>
+		        	</ul>
+		      	</div>
+	    	</div>
+	  	</div>
+	</div>
+	<!-- alarmSearch 告警高级搜索 -->
+	<div id='alarmSearch' class="alert-box" style="display:none">
+		<div class="alert-search-head">高级搜索<a href="javascript:;" class="alertClosebtn"><i class="alert-search-closeBtn pull-right"></i></a></div>
+		<div class="alert-search-content">
+			<p class="tick">仅支持24小时内告警</p><!-- 此提示仅在人员信息高级搜索中显示 -->
+			<p><span>告警对象:</span><input class="alert-search-input" type="text"></p>
+			<p><span>级别:</span><select><option>全部</option></select></p>
+			<p><span>类型:</span><select><option>全部</option></select></p>
+			<p><span>监视对象类型:</span><select><option>全部</option></select></p>
+		</div>
+		<div class="alert-box-btns">
+			<a>确定</a>
+		</div>
+	</div>
+	<!-- 发送短信 -->
+	<div id="alertSMS" class="alert-box" style="display:none">
+		<div class="alert-search-head">发送短信<a href="javascript:;" class="alertClosebtn"><i class="alert-search-closeBtn pull-right"></i></a></div>
+		<div class="alert-search-content alert-center clearfix alertSMS-btns">
+			<button class="btns-value pull-left">解除理由的常用语句解除理</button>
+			<button class="btns-value pull-left">解除理由的常用语句解除理由的常</button>
+			<button class="btns-value pull-left">解除理由的</button>
+			<button class="btns-value pull-left">解除理由的常用语句解除</button>
+			<button class="btns-value pull-left">解除理由的常用语句解除理由的常用</button>
+			<button class="btns-value pull-left">解除理由的常用语句解</button>
+			<button class="btns-value pull-left">解除理由的常用语句解除理由</button>
+			<textarea class="textarea-window pull-left" placeholder="短信内容"></textarea>
+		</div>
+		<div class="alert-box-btns">
+			<a id="SMSbtn">发送短信</a>
+		</div>
+	</div>
+	<!-- 推送ECU911 -->
+	<div id="alertECU" class="alert-box" style="display:none">
+		<div class="alert-search-head">推送ECU911<a href="javascript:;" class="alertClosebtn"><i class="alert-search-closeBtn pull-right"></i></a></div>
+		<div class="alert-search-content alert-center clearfix alertSMS-btns">
+			<button class="btns-value pull-left">解除理由的常用语句解除理</button>
+			<button class="btns-value pull-left">解除理由的常用语句解除理由的常</button>
+			<button class="btns-value pull-left">解除理由的</button>
+			<button class="btns-value pull-left">解除理由的常用语句解除</button>
+			<button class="btns-value pull-left">解除理由的常用语句解除理由的常用</button>
+			<button class="btns-value pull-left">解除理由的常用语句解</button>
+			<button class="btns-value pull-left">解除理由的常用语句解除理由</button>
+			<textarea class="textarea-window pull-left" placeholder="推送理由"></textarea>
+		</div>
+		<div class="alert-box-btns">
+			<a id="SMSbtn">推送ECU911</a>
+		</div>
+	</div>
+	<!-- 解除告警 -->
+	<div id="alertAlarm" class="alert-box" style="display:none">
+		<div class="alert-search-head">解除告警<a href="javascript:;" class="alertClosebtn"><i class="alert-search-closeBtn pull-right"></i></a></div>
+		<div class="alert-search-content alert-center clearfix alertSMS-btns">
+			<button class="btns-value pull-left">解除理由的常用语句解除理</button>
+			<button class="btns-value pull-left">解除理由的常用语句解除理由的常</button>
+			<button class="btns-value pull-left">解除理由的</button>
+			<button class="btns-value pull-left">解除理由的常用语句解除</button>
+			<button class="btns-value pull-left">解除理由的常用语句解除理由的常用</button>
+			<button class="btns-value pull-left">解除理由的常用语句解</button>
+			<button class="btns-value pull-left">解除理由的常用语句解除理由</button>
+			<textarea class="textarea-window pull-left" placeholder="解除原因"></textarea>
+		</div>
+		<div class="alert-box-btns">
+			<a>解除告警</a>
+		</div>
+	</div>
+	<!-- 监控高级搜索 -->
+	
+	<div id='alarmSearch2' class="alert-box" style="display:none">
+		<div class="alert-search-head">高级搜索<a href="javascript:;" class="alertClosebtn"><i class="alert-search-closeBtn pull-right"></i></a></div>
+		<div class="alert-search-content">
+			<p><span>监控对象类型:</span><select id="nonebody"><option>全部</option><option>罪犯</option><option>潜在受害人</option></select></p>
+			<p><span>矫正状态:</span><select id="stateSelect"><option>全部</option></select></p>
+			<p><span>矫正类型:</span><select id="typeSelect"><option>全部</option></select></p>
+			<p><span>时间:</span> 从 
+			<input size="16" type="text" class="alert-search-time form-control" value="2016.8.15" id="alert-time1-start" readonly>
+			到  <input size="16" type="text" class="alert-search-time form-control" value="2016.8.15" id="alert-time1-end" readonly>
+			<p><span>设备在线状态:</span><select><option>全部</option></select></p>
+			<p><span>执行机关:</span><select><option>全部</option></select></p>
+			<p>
+				<span>负责警官:</span><input class="alert-search-input" id="policeInput" type="text">	
+			</p>
+		</div>
+						<div class="police-name">
+							<a href="" class="list-group">分组A</a>
+							<ul>
+								<li><a onclick='police(this)'>警官1</a></li>
+								<li><a onclick='police(this)'>警官2</a></li>
+							</ul>
+							<a href="" class="list-group">分组B</a>
+							<ul>
+								<li><a onclick='police(this)'>警官3</a></li>
+								<li><a onclick='police(this)'>警官4</a></li>
+							</ul>
+							<a href="" class="list-group">分组C</a>
+							<ul>
+								<li><a onclick='police(this)'>警官5</a></li>
+								<li><a onclick='police(this)'>警官6</a></li>
+							</ul>
+							<a href="" class="list-group">分组D</a>
+							<ul>
+								<li><a onclick='police(this)'>警官7</a></li>
+								<li><a onclick='police(this)'>警官8</a></li>
+							</ul>
+						</div>
+						<style type="text/css">
+							
+						</style>
+		<div class="alert-box-btns">
+			<a>确定</a>
+		</div>
+	</div>
+	<!-- 个人信息 -->
+
+	<div id='modal-preson' class="alert-box" style="display:none">
+		<!-- <i class="alertClosebtn pull-right"></i> -->
+		<a href="javascript:;" class="alertClosebtn"><i class="clearCloseBtn"></i></a>
+		<div class="modal-body Bg-w">
+			<div class="modal-body-top">
+				<div class="modal-body-top-left pull-left text-center">
+					<a href="userInfo.html" target="_blank"><img class="user-imp img-circle" src="images/userObject.png"></a>
+					<a class="objectName" href="userInfo.html" target="_blank">Cole Mohr</a>
+				</div>
+				<div class="modal-body-top-right pull-left">
+					<p><i class="GPS-icon GPS-icon-0"></i><span class="battery">80%</span><i class="power power-5"></i><i class="modal-icon pull-right star"></i></p>
+					<p><a href='userInfo.html'><i class="modal-icon modal-icon-j"></i> <span class="wj">未处理警报<span style="color:#ff0000">3</span>个</span></a></p>
+					<p><span class="groupSize">分组A</span></p>
+					<p>矫正类型：监视居住</p>
+					<p>矫正状态：<span class="state modification">矫正中</span><span class="residualTime">剩余30天</span></p>
+				</div>
+			</div>
+		</div>
+		<div class="modal-body Bg-b">
+			<div class="modal-body-bottom">
+				<p><span class="ltittle">定位时间：</span><span class="lvalue">2016-6-28 11：17：28</span><span>方向：</span><span>东北</span></p>
+				<p><span class="ltittle">当前位置：</span><span class="lvalue">北京市海淀区学院南路72号北京市海淀区学院南路72号</span><span>速度：</span><span>120km/h</span></p>
+				<p><span class="ltittle">经纬度：</span><span class="value">北纬N38°39′27.97″ 东经E104°04′58.66″北纬N38°39′27.97″ 东经E104°04′58.66″</span></p>
+				<a class="modalBtn pull-left">电话</a><a class="modalBtn pull-right">查看轨迹</a>
+			</div>
+		</div>
+	</div>	
+	<!--  -->
+	<div id="app">
+		<div id="maps">
+			<div style="width:100%;height:100%;border:#ccc solid 1px;" id="dituContent"></div>
+		</div>
+	</div>
+<!--引用百度地图API-->
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+<script type="text/javascript">
+	//创建和初始化地图函数：
+	function initMap() {
+		createMap();//创建地图
+		setMapEvent();//设置地图事件
+		addMapControl();//向地图添加控件
+	}
+
+	//创建地图函数：
+	function createMap() {
+		var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+		var point = new BMap.Point(116.395645, 39.929986);//定义一个中心点坐标
+		map.centerAndZoom(point, 12);//设定地图的中心点和坐标并将地图显示在地图容器中
+		window.map = map;//将map变量存储在全局
+	}
+
+	//地图事件设置函数：
+	function setMapEvent() {
+		map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+		map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+		map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+		map.enableKeyboard();//启用键盘上下左右键移动地图
+	}
+
+	//地图控件添加函数：
+	function addMapControl() {
+		//向地图中添加比例尺控件
+		var ctrl_sca = new BMap.ScaleControl({
+			anchor : BMAP_ANCHOR_BOTTOM_LEFT
+		});
+		map.addControl(ctrl_sca);
+	}
+
+	initMap();//创建和初始化地图
+</script>
+</body>
+</html>

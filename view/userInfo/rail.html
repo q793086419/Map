@@ -1,0 +1,240 @@
+<div class="row rail-box">
+	<div class="col-md-6">
+		<div class="borderBox-rail">
+			
+
+
+			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+			  <div class="panel panel-default">
+			    <div class="panel-heading" role="tab" id="headingOne">
+			      <h4 class="panel-title">
+			        <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+			          <i class="rail-tittle-icon1"></i>禁出围栏<span class="caret pull-right caretTOP"></span>
+			        </a>
+			      </h4>
+			    </div>
+			    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+			      <div class="panel-body">
+			        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+			      </div>
+			    </div>
+			  </div>
+			  <div class="panel panel-default">
+			    <div class="panel-heading" role="tab" id="headingTwo">
+			      <h4 class="panel-title">
+			        <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+			          <i class="rail-tittle-icon2"></i>禁入围栏<span class="caret pull-right caretTOP"></span>
+			        </a>
+			      </h4>
+			    </div>
+			    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+			      <div class="panel-body">
+			        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+			      </div>
+			    </div>
+			  </div>
+			  <div class="panel panel-default">
+			    <div class="panel-heading" role="tab" id="headingThree">
+			      <h4 class="panel-title">
+			        <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+			          <i class="rail-tittle-icon3"></i>关注围栏<span class="caret pull-right caretTOP"></span>
+			        </a>
+			      </h4>
+			    </div>
+			    <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+			      <div class="panel-body">
+			        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+	<script type="text/javascript">
+		$('.caret').parent('a').click(function(){
+			$(this).children('span').toggleClass('caretTOP');
+		});
+	</script>
+
+
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="borderBox-map">
+			<div class="borderBox-map-head">
+				<span class="pull-left">围栏详情</span>
+				<div class="pull-right">
+					<a><i class="icon-rail-bo"></i></a>
+					<a><i class="icon-rail-nav"></i></a>
+				</div>
+			</div>
+			<div id="app">
+				<div id="maps">
+					<div style="width:100%;height:100%;border-top:#ccc solid 1px;" id="dituContent"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<style type="text/css">
+.rail-box{
+	background: #fff;
+	min-height: 720px;
+	height: 720px;
+	padding-top: 24px;
+	padding-bottom: 32px;
+	padding-left: 22px;
+	padding-right: 22px;
+	border:1px solid #dcdcdc;
+}
+.rail-box>.col-md-6{
+	height: 100%;
+	/*border:1px solid #d2d2d2;*/
+}
+.borderBox-rail,.borderBox-map{
+	width: 100%;
+	height: 100%;
+	border:1px solid #d2d2d2;
+	overflow: hidden;
+}
+.borderBox-rail{
+	border:1px solid #d2d2d2;
+	overflow-y: auto;
+}
+.borderBox-map-head{
+	height: 38px;
+	line-height: 38px;
+}
+/* map */
+#app {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+#maps {
+    width: 100%;
+    height: 100%;
+}
+.icon-rail-bo{
+	display: inline-block;
+	width: 21px;
+	height: 21px;
+	background: url(images/borderBox-map-head-icon.png) no-repeat 0px 0px;
+	margin-bottom: -4px;
+	margin-right: 18px;
+}
+.icon-rail-nav{
+	display: inline-block;
+	width: 21px;
+	height: 21px;
+	background: url(images/borderBox-map-head-icon.png) no-repeat 0px -21px;
+	margin-bottom: -4px;
+	margin-right: 18px;
+}
+.borderBox-map-head>span{
+	text-indent: 15px;
+	color: #666666;
+}
+.panel-title>a{
+	display: block;
+	color: #058cf4;
+	text-decoration: none;
+	height: 38px;
+	line-height: 38px;
+}
+.panel-heading{
+	border-radius: none !important;
+	padding: 0;
+	height: 38px;
+	line-height: 38px;
+}
+.panel-group .panel{
+	border-radius: 0 !important;
+
+}
+.panel-group{
+	margin-bottom: 0 !important;
+}
+.panel-title{
+	height: 100%;
+}
+.panel-group .panel+.panel{
+	margin-top: 0;
+	border-top: 0;
+}
+.rail-tittle-icon1{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background: url(images/icon-tittle-rail.png) no-repeat 0px 0px;
+	margin: 0 9px -6px 19px;
+}
+.rail-tittle-icon2{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background: url(images/icon-tittle-rail.png) no-repeat 0px -25px;
+	margin: 0 9px -6px 19px;
+}
+.rail-tittle-icon3{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background: url(images/icon-tittle-rail.png) no-repeat 0px -50px;
+	margin: 0 9px -6px 19px;
+}
+.caret{
+	border-top: 7px dashed;
+    border-top: 7px solid\9;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    margin-right: 10px;
+    margin-top: 17px;
+    color: #898989;
+    transition: 0.1s;
+}
+.caretTOP{
+	transform:rotate(180deg);
+	-ms-transform:rotate(180deg); 	/* IE 9 */
+	-moz-transform:rotate(180deg); 	/* Firefox */
+	-webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+	-o-transform:rotate(180deg); 	/* Opera */
+}
+</style>
+<script type="text/javascript">
+	//创建和初始化地图函数：
+	function initMap() {
+		createMap();//创建地图
+		setMapEvent();//设置地图事件
+		addMapControl();//向地图添加控件
+	}
+	//创建地图函数：
+	function createMap() {
+		var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+		var point = new BMap.Point(116.395645, 39.929986);//定义一个中心点坐标
+		map.centerAndZoom(point, 12);//设定地图的中心点和坐标并将地图显示在地图容器中
+		window.map = map;//将map变量存储在全局
+	}
+
+	//地图事件设置函数：
+	function setMapEvent() {
+		map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+		map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+		map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+		map.enableKeyboard();//启用键盘上下左右键移动地图
+	}
+
+	//地图控件添加函数：
+	function addMapControl() {
+		//向地图中添加比例尺控件
+		var ctrl_sca = new BMap.ScaleControl({
+			anchor : BMAP_ANCHOR_BOTTOM_LEFT
+		});
+		map.addControl(ctrl_sca);
+	}
+
+	initMap();//创建和初始化地图
+
+
+
+</script>

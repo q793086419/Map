@@ -1,0 +1,31 @@
+<div class="user-info-photo">
+	<div class="media">
+		<a class="media-left" href="#">
+			<img src="./images/userObject.png" alt="..." class="img-circle">
+		</a>
+		<div class="media-body">
+			<p><strong class="text-capitalize">cole mohr</strong> <i class="sex-icon sex-icon-male"></i></p>
+			<p>手机号:<span>13666668888</span></p>
+		</div>
+	</div>
+	<div class="user-info-text">
+		<p class="user-info-text-tittle">基本信息</p>
+		<p class="row"><span class="col-md-6"><span>身份证号：</span>144356768788686578</span><span  class="col-md-6"><span>编号：</span>  144356768788686578</span></p>
+		<p class="row"><span class="col-md-6"><span>犯罪类型：</span>  犯罪类型</span><span class="col-md-6"><span>住址：</span>  具体地址具体地址具体地址具体地址具体地址</span></p>
+	</div>
+	<div class="user-info-text">
+		<p class="user-info-text-tittle">紧急联系人</p>
+		<p class="row">
+			<span class="col-md-3"><span>父亲：</span>  Leo Mollet</span>
+			<span class="col-md-3">13812345678</span>
+			<span class="col-md-3"><span>母亲：</span>  Leo Mollet</span>
+			<span class="col-md-3">13812345678</span>
+		</p>
+	</div>
+	<div class="user-info-text">
+		<p class="user-info-text-tittle">详细信息</p>
+		<p class="row"><span class="col-md-6"><span>文化程度：</span>  大学</span><span class="col-md-6"><span>婚姻状况：</span>  未婚</span></p>
+		<p class="row"><span class="col-md-6"><span>健康状况：</span>  良好</span><span class="col-md-6"><span>是否有传染病： </span> 否</span></p>
+		<p class="row"><span class="col-md-6"><span>职业：</span>  工人</span><span class="col-md-6"><span>工作单位：</span>  具体地址具体地址具体地址具体地址具体地址具体地址</span></p>
+	</div>
+</div>

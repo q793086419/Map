@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+<meta charset="UTF-8">
+<title>社区矫正系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" http-equiv="Content-Type">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/userInfo.css" />
+<link rel="stylesheet" type="text/css" href="css/common-table.css">
+<!-- baidu map -->
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="js/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="angular/angular.js"></script>
+<script src="js/respond.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap-table.css">
+<!-- Latest compiled and minified JavaScript -->
+<script type="text/javascript" src="js/bootstrap-table.js"></script>
+<!-- Latest compiled and minified Locales -->
+<script type="text/javascript" src="js/bootstrap-table-zh-CN.js"></script>
+
+<script type="text/javascript">
+// function power(obj,x){
+// 	if (x<=20){
+// 		$('.power-pro').addClass('power-pro-min');
+// 		$('.power-pro .progress .progress-bar').css('width',x+'%');
+// 	}else{
+// 		$('.power-pro').removeClass('power-pro-min');
+// 		$('.power-pro .progress .progress-bar').css('width',x+'%');
+// 	}
+// }
+function power(x){
+	if (x<=20){
+		$('.power-pro').addClass('power-pro-min');
+		$('.power-pro .progress .progress-bar').css('width',x+'%');
+	}else{
+		$('.power-pro').removeClass('power-pro-min');
+		$('.power-pro .progress .progress-bar').css('width',x+'%');
+	}
+}
+</script>
+</head>
+<body>
+	<ul class="nav nav-stacked tablist" role="tablist">
+	  <li role="presentation" class="active"><a href="#userInfo" role="tab" data-toggle="tab"><i class="tablist-icon tablist-icon-userInfo"></i> 个人信息</a></li>
+	  <li role="presentation"><a href="#correctInfo" role="tab" data-toggle="tab"><i class="tablist-icon tablist-icon-correctInfo"></i> 矫正信息</a></li>
+	  <li role="presentation"><a href="#device" role="tab" data-toggle="tab"><i class="tablist-icon tablist-icon-device"></i> 设备</a></li>
+	  <li role="presentation"><a href="#rail" role="tab" data-toggle="tab"><i class="tablist-icon tablist-icon-rail"></i> 围栏</a></li>
+	  <li role="presentation"><a href="#alarm" role="tab" data-toggle="tab"><i class="tablist-icon tablist-icon-alarm"></i> 告警</a></li>
+	  <li role="presentation"><a href="#options" role="tab" data-toggle="tab"><i class="tablist-icon tablist-icon-options"></i> 附件</a></li>
+	  <li role="presentation"><a href="#statistical" role="tab" data-toggle="tab"><i class="tablist-icon tablist-icon-statistical"></i> 统计分析</a></li>
+	</ul>
+	<div class="tab-content tab-content">
+	  <div role="tabpanel" class="tab-pane fade in active" id="userInfo" ng-include src="'view/userInfo/userInfo.html'"></div>
+	  <div role="tabpanel" class="tab-pane fade" id="correctInfo" ng-include src="'view/userInfo/correctInfo.html'"></div>
+	  <div role="tabpanel" class="tab-pane fade" id="device" ng-include src="'view/userInfo/device.html'"></div>
+	  <div role="tabpanel" class="tab-pane fade" id="rail" ng-include src="'view/userInfo/rail.html'"></div>
+	  <div role="tabpanel" class="tab-pane fade" id="alarm" ng-include src="'view/userInfo/alarm.html'"></div>
+	  <div role="tabpanel" class="tab-pane fade" id="options" ng-include src="'view/userInfo/options.html'"></div>
+	  <div role="tabpanel" class="tab-pane fade" id="statistical" ng-include src="'view/userInfo/statistical.html'"></div>
+	</div>
+</body>
+</html>

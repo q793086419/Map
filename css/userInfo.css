@@ -1,0 +1,279 @@
+html,body{
+	width: 100%;
+	height: 100%;
+	font-family: "Microsoft Yahei";
+}
+.tablist{
+	width: 200px;
+	height: 100%;
+	position: fixed;
+	background: #475262;
+}
+.tab-content{
+	width: 100%;
+	height: 100%;
+	padding: 40px;
+	padding-left: 240px;
+	background: #f1f3f5;
+}
+.tablist.nav>li>a{
+	border-left: 4px solid #475262;
+	color: #a0b3d4;
+	font-size: 16px;
+}
+.tablist.nav>li>a:focus, .tablist.nav>li>a:hover{
+    background-color: #f1f3f5;
+    border-left: 4px solid #058cf4;
+    color: #058cf4;
+}
+.tablist.nav>li.active>a{
+    background-color: #f1f3f5;
+    border-left: 4px solid #058cf4;
+    color: #058cf4;
+}
+.tablist-icon{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-bottom: -3px;
+	background: url("../images/userinfo-tablist-icon.png");
+}
+.tablist.nav>li.active>a>i{
+	background-position-x: 20px;
+}
+.tablist.nav>li>a:focus i, .tablist.nav>li>a:hover i{
+	background-position-x: 20px;
+}
+.tablist-icon-userInfo{
+	background-position: 0px 0px;
+}
+.tablist-icon-correctInfo{
+	background-position: 0px -20px;
+}
+.tablist-icon-device{
+	background-position: 0px -40px;
+}
+.tablist-icon-rail{
+	background-position: 0px -60px;
+}
+.tablist-icon-alarm{
+	background-position: 0px -80px;
+}
+.tablist-icon-options{
+	background-position: 0px -100px;
+}
+.tablist-icon-statistical{
+	background-position: 0px -120px;
+}
+.sex-icon{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-bottom: -3px;
+	background: url("../images/sex-icon.png");
+}
+.sex-icon-male{
+	
+}
+.user-info-photo .media-body{
+	vertical-align: middle;
+	padding-left: 15px;
+}
+.user-info-text{
+	padding: 30px;
+	background: #fff;
+	margin: 10px 0;
+}
+.user-info-text-tittle{
+	color: #058cf4;
+	border:none !important;
+}
+.user-info-text>p{
+	padding: 7px 0;
+}
+.user-info-text>p>span>span{
+	width: 100px;
+	display: inline-block;
+	text-align: right;
+	margin-left: -30px;
+}
+.user-info-enclosure>.user-info-text>p{
+	border-bottom: 1px solid #e5e5e5;
+	padding: 0 0 14px 0;
+}
+.user-info-text-tel{
+	background: url(../images/user-info-text-tel.png) no-repeat 0 3px;
+	text-indent: 6px;
+}
+.user-info-text-mail{
+	background: url(../images/user-info-text-mail.png) no-repeat 0 4px;
+	text-indent: 6px;
+}
+.border-line{
+	display: inline-block;
+	height:0;
+	border-bottom:1px solid #e5e5e5;
+	width: 100%;
+}
+.GPS-icon{
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background: url(../images/modal-icon.png) no-repeat 0 0 ;
+	margin-left: 10px;
+    margin-bottom: -2px;
+}
+.power-icon{
+	display: inline-block;
+	width: 20px;
+	height: 18px;
+	background: url(../images/modal-icon.png) no-repeat -17px 0;
+    margin-left: 10px;
+    margin-bottom: -4px;
+}
+.power-pro{
+	display: inline-block;
+	width: 18px !important;
+    height: 9px;
+    background:url("../images/power.png");
+    background-position: 0 9px;
+    vertical-align: middle;
+	margin-top: -3px;
+	margin-left: 2px !important;
+}
+.power-pro-min{
+	background-position: 0 0;
+}
+.power-pro .progress{
+	width: 13px;
+	height: 5px;
+	background-color: #fff;
+	margin-bottom: 0;
+	margin-left: 2px;
+    border-radius:0;
+	margin-top: 2px;
+}
+.power-pro .progress .progress-bar{
+	background-color: #339900;
+	max-width: 89%;
+}
+.power-pro-min .progress .progress-bar{
+	background-color: #e60012;
+}
+.file{
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	background: url(../images/files.png);
+	margin-bottom: -5px;
+    margin-right: 10px;
+}
+.file-files{
+	background-position: 0 0;
+}
+.file-xls{
+	background-position: -21px 0;
+}
+.file-ppt{
+	background-position: -41px 0;
+}
+.file-doc{
+	background-position: -61px 0;
+}
+.file-pdf{
+	background-position: -80px 0;
+}
+/* bootstrap-tables */
+/* 注释部分为老版个人信息-告警 table */
+/*.alermSearch-table{
+	width: 100%;
+	border:1px solid #dcdcdc;
+	font-size: 14px;
+	background: #fff;
+}
+.alermSearch-table>tbody>tr>td>a{
+	display: inline-block;
+	text-decoration: none;
+	margin-left: 8px;
+	height: 23px;
+	line-height: 23px;
+	padding: 0 8px;
+	color:#737373;
+	border-radius: 1px;
+}
+.alermSearch-table>tbody>tr>td>a:hover,a.active{
+	color: #ffffff !important;
+	background: #ff9933;
+}
+.alermSearch-table>tbody>tr>td{
+	border:1px solid #dcdcdc;
+	height: 36px;
+	line-height: 36px;
+}
+.td-name{
+	width: 95px;
+	text-align: center;
+	background: #ecf1f4;
+}
+.tableMoreBtn{
+	width: 64px;
+	height: 28px;
+	border:1px solid #dcdcdc;
+	background: #eeeeee;
+	display: block;
+	float: right;
+	margin: 3px 4px 0 0;
+	line-height: 24px;
+	color: #666666;
+}
+.tableMoreBtnI{
+	display: inline-block;
+	width: 10px;
+	height: 5px;
+	background:url(../images/tableMoreBtnIcon.png) no-repeat;
+	margin-left: 5px;
+	margin-bottom: 3px;
+}
+.display-tableTr{
+	display: none;
+}
+.font-red{
+	color: #ff0000;
+}
+.font-blue{
+	color: #058cf4;
+}*/
+
+.user-info-text-tittle input{
+	margin-right: 5px;
+}
+
+
+.user-info-enclosure-download{
+	display: block;
+	width: 100%;
+}
+.user-info-enclosure-download button{
+	background: #ed9e59;
+	height: 26px;
+	line-height: 24px;
+	padding: 0 13px;
+	color: #ffffff;
+	border:1px solid #dcdcdc;
+}
+.user-info-enclosure-download button:hover{
+	background: #ec8218;
+}
+.user-info-enclosure-download>button>.download-icon{
+	height: 14px;
+	width: 14px;
+	display: inline-block;
+	background: url(../images/icon-options-download.png) no-repeat;
+	margin-right: 5px;
+}
+.user-info-text-tittle label{
+	font-weight: 400;
+}
+/* GPS */
+
+/* power */
