@@ -1525,3 +1525,54 @@ i.item-list-icon-right-return:hover {
 	z-index: 950;
 }
 /* 遮罩层end */
+/* search-result */
+.search-result{
+	position: absolute;
+	z-index: 100;
+	width: 323px;
+	background: #ffffff;
+	height: 100%;
+	top: 60px;
+	display: none;
+	transition-property: top;
+	transition-duration: 0.5s;
+	transition-timing-function: ease;
+}
+body.main .search-result{
+	top:0px;
+}
+body.main .search-result .preson-list{
+	height: calc(100% - 37px - 41px - 59px);
+}
+body.main .search-result .pages{
+	top: calc(100% - 37px - 41px) !important;
+}
+.preson-list{
+	height: calc(100% - 60px - 37px - 41px - 59px);
+	overflow-x: hidden;
+	overflow-y: auto;
+	background: #fff;
+}
+.search-result .pages{
+	padding-top: 19px;
+	top: calc(100% - 60px - 37px - 41px);
+}
+.search-result-tittle{
+	height: 37px;
+	line-height: 37px;
+	text-align: center;
+	border-bottom: 1px solid #e5e5e5;
+}
+.returnPanelBtn{
+	display: inline-block;
+	height: 37px;
+	padding: 0 12px; 
+}
+.returnPanel{
+	display: inline-block;
+	margin: 0 0 -3px 0;
+	width: 13px; 
+	height: 13px;
+	background: url(../images/menu-list.png) no-repeat;
+}
+/* search-result end */

@@ -1,9 +1,9 @@
 $(function(){
 	$('.q-f').click(function(){
-		$('body').toggleClass("main")
+		$('body').toggleClass("main");
 	})
 	$('.nav-icon-f').click(function(){
-		$('body').toggleClass("main")
+		$('body').toggleClass("main");
 	})
 	$('.item-list-icon-left').click(function(){
 		$('#left-panel1').toggleClass("left-panel1")
@@ -53,6 +53,7 @@ $(function(){
 	//panel1
 	$('.item-list-icon-left').click(function(){
 		$(this).hide();
+		$('.search-result').hide();
 	})
 	$('.item-list>.item-list-icon-left').click(function(){
 		$('.item-list-icon-left').show();
@@ -60,6 +61,7 @@ $(function(){
 	//panel2
 	$('.item-list-icon-right').click(function(){
 		$(this).hide();
+		$('.search-result').hide();
 	})
 	$('.item-list>.item-list-icon-right').click(function(){
 		$('.item-list-icon-right').show();
@@ -74,7 +76,34 @@ $(function(){
 	// 		$('.power-pro .progress .progress-bar').css('width',x+'%');
 	// 	}
 	// }
-
+	// search result
+	$('.resultBtn-search').click(function(){
+		console.log($(this).attr('parent')=='searchBtnTrue');
+		if($(this).attr('parent')=='searchBtnTrue'){
+			$('.alert-box').hide();
+			$('#alarmSearch').toggle();
+			$('.noClick').toggle();
+		}else{
+			$('.alert-box').hide();
+			$('#alarmSearch2').toggle();
+			$('.noClick').toggle();
+		}
+	});
+	$('#searchBtnTrue').click(function(){
+		$('.search-result').show();
+		$('.alert-box').hide();
+		$('.noClick').hide();
+		$('.resultBtn-search').attr('parent','searchBtnTrue');
+	});
+	$('#searchBtnTrue2').click(function(){
+		$('.search-result').show();
+		$('.alert-box').hide();
+		$('.noClick').hide();
+		$('.resultBtn-search').attr('parent','');
+	});
+	$('.returnPanelBtn').click(function(){
+		$('.search-result').hide();
+	})
 	//fix-messages-more  => more btn
 	$('.fix-messages-more').click(function(){
 		$('#left-panel2').addClass("left-panel2");
@@ -319,6 +348,29 @@ $(function(){
 			$('#pages2').bootstrapPaginator("show", $('#jump-input2').val());
 		}
 	})
+	var option3 = {
+		"currentPage" : 1,//当前页码
+		"totalPages" :1000,//总共页码
+		"numberOfPages" : 4,//设置显示的页按钮的数量
+		"alignment" : "left",//对齐方式 左对齐
+		shouldShowPage:function(type, page, current){
+		   	switch(type)
+		    {
+		        case "first":
+		        case "last":
+		            return false;
+		        default:
+		        return true;
+		    }
+		}
+	};
+	$('#pages3').bootstrapPaginator(option3);
+	$('.maxpage').text('共'+option3.totalPages+'页 ');
+	$('.jump-btn3').click(function(){
+		if ($('#jump-input3').val()<=option3.totalPages && $('#jump-input3').val()>0 && $('#jump-input3').val().indexOf(".")<0){
+			$('#pages3').bootstrapPaginator("show", $('#jump-input3').val());
+		}
+	})
 })
 
 
@@ -359,8 +411,6 @@ function timerout(){
 	messagerTimeout = setTimeout(function(){$('.fix-messages>ul>li').hide()},5000);
 	messagerMoreTimeout = setTimeout(function(){$('.fix-messages-more').hide()},5000);
 }
-
-$('.fix-messages-more')
 
 //自动输入到警官input输入框中
 function police(obj){
