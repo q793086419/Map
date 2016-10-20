@@ -47,6 +47,7 @@ $(function(){
 			//$('.alert-div').removeClass("alert-div-alert");	
 		}
 		event.stopPropagation();
+		return false
 	})
 	//左侧树关闭按钮
 	//panel1
@@ -73,6 +74,18 @@ $(function(){
 	// 		$('.power-pro .progress .progress-bar').css('width',x+'%');
 	// 	}
 	// }
+
+	//fix-messages-more  => more btn
+	$('.fix-messages-more').click(function(){
+		$('#left-panel2').addClass("left-panel2");
+		$('#rightCloseBtn').show();
+		// $('#profile-tab');
+		$('#home-tab').parent('li').removeClass('active');
+		$('#profile-tab').parent('li').addClass('active');
+		$('#profile').addClass('active in');
+		$('#home').removeClass('active in');
+
+	})
 	//点击输入框显示警官名目录	
 	$('#policeInput').focus(function(){
 		$('.police-name').show();
@@ -116,29 +129,34 @@ $(function(){
 	$('#alarmSearchBtn').click(function(){
 		$('.alert-box').hide();
 		$('#alarmSearch').toggle();
+		$('.noClick').toggle();
 	});
 	//发送短信弹窗
 	$('.SMSBtn').click(function(){
 		$('.alert-box').hide();
 		$('#alertSMS').toggle();
 		$('.textarea-window').val('');
+		$('.noClick').toggle();
 	});
 	//解除告警弹窗
 	$('.alertAlarmBtn').click(function(){
 		$('.alert-box').hide();
 		$('#alertAlarm').toggle();
 		$('.textarea-window').val('');
+		$('.noClick').toggle();
 	});
 	//EUC911
 	$('.ECU911').click(function(){
 		$('.alert-box').hide();
 		$('#alertECU').toggle();
 		$('.textarea-window').val('');
+		$('.noClick').toggle();
 	});
 	//监控高级搜索 唯一id打开指定的监控搜索框
 	$('#alarmSearchBtn2').click(function(){
 		$('.alert-box').hide();
 		$('#alarmSearch2').toggle();
+		$('.noClick').toggle();
 	});
 	//个人详细信息弹窗
 	$('.preson-list>ul>li>a').click(function(){
@@ -147,6 +165,7 @@ $(function(){
 	});
 	$('.alertClosebtn').click(function(){
 		$('.alert-box').hide();
+		$('.noClick').hide();
 	});
 	//发送短信alert
 	$('.btns-value').click(function(){
@@ -286,13 +305,8 @@ $(function(){
 		}
 	};
 	$('#pages1').bootstrapPaginator(option1);
-	// if(option.currentPage==1||option.currentPage==option.totalPages){
-
-	// }
-	// 每次change判断当前页是否为首页或尾页，禁用首页或尾页
 	$('.maxpage').text('共'+option1.totalPages+'页 ');
 	$('.jump-btn1').click(function(){
-		// console.log($('#jump-input').val().indexOf(".") > 0 );
 		if ($('#jump-input1').val()<=option1.totalPages && $('#jump-input1').val()>0 && $('#jump-input1').val().indexOf(".")<0){
 			$('#pages1').bootstrapPaginator("show", $('#jump-input1').val());
 		}
@@ -336,12 +350,18 @@ function userMessagefix(data){
 }
 
 var messagerTimeout = setTimeout(function(){$('.fix-messages>ul>li').hide()},5000);
+var messagerMoreTimeout = setTimeout(function(){$('.fix-messages-more').hide()},5000);
 function timer(){
 	clearTimeout(messagerTimeout);
+	clearTimeout(messagerMoreTimeout);
 }
 function timerout(){
 	messagerTimeout = setTimeout(function(){$('.fix-messages>ul>li').hide()},5000);
+	messagerMoreTimeout = setTimeout(function(){$('.fix-messages-more').hide()},5000);
 }
+
+$('.fix-messages-more')
+
 //自动输入到警官input输入框中
 function police(obj){
 	$('#policeInput').val('');

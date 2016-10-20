@@ -66,7 +66,7 @@
 						    <img src="images/user.png">   wangbadan
 						  </a>
 						  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-						    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-toggle="modal" data-target="#myModal">消息<i class="red nav-red">5</i></a></li>
+						    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-toggle="modal" data-target="#myModal">消息<i class="red nav-red">12345</i></a></li>
 						    
 						    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">设置</a></li>
 						    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">退出</a></li>
@@ -124,6 +124,7 @@
 				        			<p class="userlist2"><span class="object-state green">矫正中</span><span class="outdate">剩余30天</span><span class="pull-right address">皂君庙</span></p>
 			        			</div>
 		        			</a>
+		        		</li>
 		        		<li>
 		        			<a href="javascript:;">
 			        			<img class="pull-left object-img" src="images/Object.png"/>
@@ -149,7 +150,7 @@
 				<div class="pages clearfix">
 					
 					<div class="pull-left page" id="pages2"></div>
-					<div class="pull-right mp0"><span class="maxpage"></span><span class="jump-text">跳转到</span><input class="jump-input" id="jump-input2"  type="text"/><a class="jump-btn jump-btn2">确定</a></div>
+					<div class="pull-right mp0"><span class="maxpage"></span><!-- <span class="jump-text">跳转到</span> --><input class="jump-input" id="jump-input2"  type="text"/><a class="jump-btn jump-btn2">跳转</a></div>
 				</div>
 			</div>
 		</div>
@@ -214,7 +215,7 @@
 							<li class="">
 								<a onclick="messageDetails(this)">
 									<img class="userPhoto pull-left " src="images/userObject.png"/>
-									<p class="messages"><span class="message-name ">Cole Mohr</span><span class="message-grade">一2级</span><span class="message-state">紧急呼叫</span></p>
+									<p class="messages"><span class="message-name ">Cole Mohr</span><span class="message-grade">一级</span><span class="message-state">紧急呼叫</span></p>
 									<p class="message-date">时间：<span>6.23 11：13：30</span></p>
 									<i class="messageClose pull-right"></i>
 								</a>
@@ -230,7 +231,7 @@
 							<li>
 								<a onclick="messageDetails(this)">
 									<img class="userPhoto pull-left " src="images/userObject.png"/>
-									<p class="messages"><span class="message-name ">Cole Mohr</span><span class="message-grade">一2级</span><span class="message-state">紧急呼叫</span></p>
+									<p class="messages"><span class="message-name ">Cole Mohr</span><span class="message-grade">一级</span><span class="message-state">紧急呼叫</span></p>
 									<p class="message-date">时间：<span>6.23 11：13：30</span></p>
 									<i class="messageClose pull-right"></i>
 								</a>
@@ -245,7 +246,7 @@
 							<li>
 								<a onclick="messageDetails(this)">
 									<img class="userPhoto pull-left " src="images/userObject.png"/>
-									<p class="messages"><span class="message-name ">Cole Mohr</span><span class="message-grade">一2级</span><span class="message-state">紧急呼叫</span></p>
+									<p class="messages"><span class="message-name ">Cole Mohr</span><span class="message-grade">一级</span><span class="message-state">紧急呼叫</span></p>
 									<p class="message-date">时间：<span>6.23 11：13：30</span></p>
 									<i class="messageClose pull-right"></i>
 								</a>
@@ -261,7 +262,7 @@
 				    </div>
 					<div class="pages clearfix">						
 						<div class="pull-left page" id="pages1"></div>
-						<div class="pull-right mp0"><span class="maxpage"></span><span class="jump-text">跳转到</span><input class="jump-input" id="jump-input1"  type="text"/><a class="jump-btn jump-btn1">确定</a></div>
+						<div class="pull-right mp0"><span class="maxpage"></span><!-- <span class="jump-text">跳转到</span> --><input class="jump-input" id="jump-input1"  type="text"/><a class="jump-btn jump-btn1">跳转</a></div>
 					</div>				    
 				</div>
 			</div>
@@ -270,7 +271,10 @@
 	</div>
 	<!-- 右下角 -->
 	<div class="fix-messages">
-		<div class="fix-messages-more pull-right item-list-icon-right2" style="display:none">更多</div><!-- 当消息超过3条时显示 更多 -->
+		<div class="fix-messages-more pull-right item-list-icon-right2" onmousemove="timer()" onmouseout="timerout()">更多</div><!-- 当消息超过3条时显示 更多 -->
+		<script type="text/javascript">
+			
+		</script>
 		<ul id="">
 			<li id="" class="" onmousemove="timer()" onmouseout="timerout()">
 				<a id="userMessage" href="javascript:;" onclick="userMessagefix(this)"> <img class="userPhoto pull-left" src="images/userObject.png" />
@@ -377,6 +381,8 @@
 	    	</div>
 	  	</div>
 	</div>
+	<!-- 遮罩层 -->
+	<div class="noClick"></div>
 	<!-- alarmSearch 告警高级搜索 -->
 	<div id='alarmSearch' class="alert-box" style="display:none">
 		<div class="alert-search-head">高级搜索<a href="javascript:;" class="alertClosebtn"><i class="alert-search-closeBtn pull-right"></i></a></div>

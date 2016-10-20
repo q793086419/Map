@@ -481,7 +481,7 @@ body.main .nav-icon-f{
 }
 .red{
 	display:inline-block;
-	width:15px;
+	padding: 0 3px;
 	height:15px;
 	background:#ff0000;
 	color:#ffffff;
@@ -1071,6 +1071,10 @@ margin: 10px 0 10px;
 	overflow-y: auto;
 	background: #fff;
 }
+.tab-pane>ul>li{
+	height: 64px;
+	border-bottom: 1px solid #e5e5e5;
+}
 .tab-pane>ul>li.active{
 	background: #eef2f8;
 }
@@ -1491,15 +1495,15 @@ i.item-list-icon-right-return:hover {
 	padding:0 5px;
 	margin-right: 8px;
 }
-.jump-text{
+/*.jump-text{
 	display:inline-block;
 	margin-right:3px;
 	color:#666666;
 	font-size:12px;
-}
+}*/
 .jump-input{
 	display:inline-block;
-	width: 25px;
+	width: 30px;
 	text-align: center;
 }
 .mp0{
@@ -1511,4 +1515,13 @@ i.item-list-icon-right-return:hover {
 	margin-right: 2px;
 }
 /* pages end */
-
+/* 遮罩层 */
+.noClick{
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0);
+	z-index: 950;
+}
+/* 遮罩层end */
