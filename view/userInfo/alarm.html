@@ -54,10 +54,10 @@
 		<span>自动处理：<span class="font-blue">16</span></span> -->
 	</div>
 	<div class="searchValue-btns pull-right">
-		<a>解除</a>
-		<a>推送ECU911</a>
+		<a class="alertAlarmBtn">解除</a>
+		<a class="ECU911">推送ECU911</a>
 		<a>电话</a>
-		<a>短信</a>
+		<a class="SMSBtn">短信</a>
 	</div>
 </div>
 <div class="mtb">
@@ -66,4 +66,90 @@
 	</table>
 	<div class="mtb-btngroup">跳转到<input class="ye"><button class="que">确定</button></div>
 </div>
+<!-- 发送短信 -->
+<div id="alertSMS" class="alert-box" style="display:none">
+	<div class="alert-search-head">发送短信<a href="javascript:;" class="alertClosebtn"><i class="alert-search-closeBtn pull-right"></i></a></div>
+	<div class="alert-search-content alert-center clearfix alertSMS-btns">
+		<button class="btns-value pull-left">解除理由的常用语句解除理</button>
+		<button class="btns-value pull-left">解除理由的常用语句解除理由的常</button>
+		<button class="btns-value pull-left">解除理由的</button>
+		<button class="btns-value pull-left">解除理由的常用语句解除</button>
+		<button class="btns-value pull-left">解除理由的常用语句解除理由的常用</button>
+		<button class="btns-value pull-left">解除理由的常用语句解</button>
+		<button class="btns-value pull-left">解除理由的常用语句解除理由</button>
+		<textarea class="textarea-window pull-left" placeholder="短信内容"></textarea>
+	</div>
+	<div class="alert-box-btns">
+		<a id="SMSbtn">发送短信</a>
+	</div>
+</div>
+<!-- 推送ECU911 -->
+<div id="alertECU" class="alert-box" style="display:none">
+	<div class="alert-search-head">推送ECU911<a href="javascript:;" class="alertClosebtn"><i class="alert-search-closeBtn pull-right"></i></a></div>
+	<div class="alert-search-content alert-center clearfix alertSMS-btns">
+		<button class="btns-value pull-left">解除理由的常用语句解除理</button>
+		<button class="btns-value pull-left">解除理由的常用语句解除理由的常</button>
+		<button class="btns-value pull-left">解除理由的</button>
+		<button class="btns-value pull-left">解除理由的常用语句解除</button>
+		<button class="btns-value pull-left">解除理由的常用语句解除理由的常用</button>
+		<button class="btns-value pull-left">解除理由的常用语句解</button>
+		<button class="btns-value pull-left">解除理由的常用语句解除理由</button>
+		<textarea class="textarea-window pull-left" placeholder="推送理由"></textarea>
+	</div>
+	<div class="alert-box-btns">
+		<a id="SMSbtn">推送ECU911</a>
+	</div>
+</div>
+<!-- 解除告警 -->
+<div id="alertAlarm" class="alert-box" style="display:none">
+	<div class="alert-search-head">解除告警<a href="javascript:;" class="alertClosebtn"><i class="alert-search-closeBtn pull-right"></i></a></div>
+	<div class="alert-search-content alert-center clearfix alertSMS-btns">
+		<button class="btns-value pull-left">解除理由的常用语句解除理</button>
+		<button class="btns-value pull-left">解除理由的常用语句解除理由的常</button>
+		<button class="btns-value pull-left">解除理由的</button>
+		<button class="btns-value pull-left">解除理由的常用语句解除</button>
+		<button class="btns-value pull-left">解除理由的常用语句解除理由的常用</button>
+		<button class="btns-value pull-left">解除理由的常用语句解</button>
+		<button class="btns-value pull-left">解除理由的常用语句解除理由</button>
+		<textarea class="textarea-window pull-left" placeholder="解除原因"></textarea>
+	</div>
+	<div class="alert-box-btns">
+		<a>解除告警</a>
+	</div>
+</div>
+<!-- <link rel="stylesheet" href="css/index.css" /> -->
+<!-- <link rel="stylesheet" href="css/modal.css" /> -->
 <script type="text/javascript" src="js/alarm.js"></script>
+<script type="text/javascript">
+	//解除告警弹窗
+	$('.alertAlarmBtn').click(function(){
+		$('.alert-box').hide();
+		$('#alertAlarm').toggle();
+		$('.textarea-window').val('');
+		$('.noClick').toggle();
+	});
+</script>
+<style type="text/css">
+	/* alert-box */
+	.alert-box{
+		width: 420px;
+		min-width: 370px;
+		position: absolute;
+		left: 50%;
+		margin-left: -210px;
+		margin-top: 200px;
+		background: rgba(255,255,255,1);
+		color: #333333;
+		z-index: 990;
+		border-radius: 4px;
+		border:1px solid #c8c7c7;
+	}
+	.alert-search-head{
+		background:rgba(107,120,141,0.9); 
+		color:#ffffff;
+		font-size: 16px;
+		height: 39px;
+		line-height: 39px;
+		padding: 0 10px;
+	}
+</style>

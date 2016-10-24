@@ -1575,4 +1575,7 @@ body.main .search-result .pages{
 	height: 13px;
 	background: url(../images/menu-list.png) no-repeat;
 }
+#search-result2 .tab-pane{
+	left: 0;
+}
 /* search-result end */

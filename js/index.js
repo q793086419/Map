@@ -31,7 +31,7 @@ $(function(){
 	//关注
 	var alertDiv = $('<div class="alert-div">关注成功</div>')
 	var alertDivfalse = $('<div class="alert-div-false">取消关注成功</div>')
-	$('.star').click(function(){
+	$('.star').click(function(event){
 		if($(this).hasClass('star-click')){
 			$('.alert-div-false').addClass("alert-div-alert")
 			setTimeout( function(){
@@ -77,30 +77,51 @@ $(function(){
 	// 	}
 	// }
 	// search result
-	$('.resultBtn-search').click(function(){
-		console.log($(this).attr('parent')=='searchBtnTrue');
-		if($(this).attr('parent')=='searchBtnTrue'){
-			$('.alert-box').hide();
-			$('#alarmSearch').toggle();
-			$('.noClick').toggle();
-		}else{
-			$('.alert-box').hide();
-			$('#alarmSearch2').toggle();
-			$('.noClick').toggle();
-		}
-	});
-	$('#searchBtnTrue').click(function(){
-		$('.search-result').show();
+	$('#searchBtnTrue2').click(function(){//人员
+		$('#alarmSearch2').toggle();
+		$('.noClick').toggle();
+		$('#search-result1').show();
+	})
+	$('#searchBtnTrue').click(function(){//告警
+		$('#alarmSearch').toggle();
+		$('.noClick').toggle();
+		$('#search-result2').show();
+	})
+	$('.searchBtn-icon2').click(function(){//告警
 		$('.alert-box').hide();
 		$('.noClick').hide();
-		$('.resultBtn-search').attr('parent','searchBtnTrue');
-	});
-	$('#searchBtnTrue2').click(function(){
-		$('.search-result').show();
+		$('#search-result2').show();
+	})
+	$('.searchBtn-icon1').click(function(){//告警
 		$('.alert-box').hide();
 		$('.noClick').hide();
-		$('.resultBtn-search').attr('parent','');
-	});
+		$('#search-result1').show();
+	})
+
+	// $('.resultBtn-search').click(function(){
+	// 	console.log($(this).attr('parent')=='searchBtnTrue');
+	// 	if($(this).attr('parent')=='searchBtnTrue'){
+	// 		$('.alert-box').hide();
+	// 		$('#alarmSearch').toggle();
+	// 		$('.noClick').toggle();
+	// 	}else{
+	// 		$('.alert-box').hide();
+	// 		$('#alarmSearch2').toggle();
+	// 		$('.noClick').toggle();
+	// 	}
+	// });
+	// $('#searchBtnTrue').click(function(){
+	// 	$('.search-result').show();
+	// 	$('.alert-box').hide();
+	// 	$('.noClick').hide();
+	// 	$('.resultBtn-search').attr('parent','searchBtnTrue');
+	// });
+	// $('#searchBtnTrue2').click(function(){
+	// 	$('.search-result').show();
+	// 	$('.alert-box').hide();
+	// 	$('.noClick').hide();
+	// 	$('.resultBtn-search').attr('parent','');
+	// });
 	$('.returnPanelBtn').click(function(){
 		$('.search-result').hide();
 	})
@@ -160,6 +181,11 @@ $(function(){
 		$('#alarmSearch').toggle();
 		$('.noClick').toggle();
 	});
+	$('#alarmSearch4').click(function(){
+		$('.alert-box').hide();
+		$('#alarmSearch').toggle();
+		$('.noClick').toggle();
+	});
 	//发送短信弹窗
 	$('.SMSBtn').click(function(){
 		$('.alert-box').hide();
@@ -183,6 +209,11 @@ $(function(){
 	});
 	//监控高级搜索 唯一id打开指定的监控搜索框
 	$('#alarmSearchBtn2').click(function(){
+		$('.alert-box').hide();
+		$('#alarmSearch2').toggle();
+		$('.noClick').toggle();
+	});
+	$('#alarmSearch3').click(function(){
 		$('.alert-box').hide();
 		$('#alarmSearch2').toggle();
 		$('.noClick').toggle();
@@ -369,6 +400,29 @@ $(function(){
 	$('.jump-btn3').click(function(){
 		if ($('#jump-input3').val()<=option3.totalPages && $('#jump-input3').val()>0 && $('#jump-input3').val().indexOf(".")<0){
 			$('#pages3').bootstrapPaginator("show", $('#jump-input3').val());
+		}
+	})
+	var option4 = {
+		"currentPage" : 1,//当前页码
+		"totalPages" :999,//总共页码
+		"numberOfPages" : 4,//设置显示的页按钮的数量
+		"alignment" : "left",//对齐方式 左对齐
+		shouldShowPage:function(type, page, current){
+		   	switch(type)
+		    {
+		        case "first":
+		        case "last":
+		            return false;
+		        default:
+		        return true;
+		    }
+		}
+	};
+	$('#pages4').bootstrapPaginator(option4);
+	$('.maxpage').text('共'+option4.totalPages+'页 ');
+	$('.jump-btn4').click(function(){
+		if ($('#jump-input4').val()<=option4.totalPages && $('#jump-input4').val()>0 && $('#jump-input4').val().indexOf(".")<0){
+			$('#pages4').bootstrapPaginator("show", $('#jump-input4').val());
 		}
 	})
 })
